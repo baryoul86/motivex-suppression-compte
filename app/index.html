@@ -902,7 +902,7 @@ function home(){
   <div class="wrap">
     <section class="hero">
       <div>
-        <div class="eyebrow">Légion étrangère · cours complet du manuel <span style="opacity:.55">· version 51</span></div>
+        <div class="eyebrow">Légion étrangère · cours complet du manuel <span style="opacity:.55">· version 52</span></div>
         <h1>Apprenez.<br>Puis <em>prouvez-le.</em></h1>
         <div class="bubble fade-in"><div class="who"><span class="dot"></span>Instructeur</div><span id="greet">${esc(greet)}</span></div>
         <div class="row" style="margin-top:16px">
@@ -933,7 +933,7 @@ function home(){
     const b = document.createElement('button');
     b.className = 'card';
     b.innerHTML = `${stamp}<span class="num">${pad2(c.n)}</span><span class="ttl">${esc(c.title)}</span><span class="fr">${esc(c.fr)}</span>
-      <span class="meta"><span>${c.lesson.length} leçons · ${c.quiz.length} questions</span></span>
+      <span class="meta"><span>${c.lesson.length} ${c.quiz.length ? 'leçons · ' + c.quiz.length + ' questions' : 'fiches animées'}</span></span>
       <span class="meta"><span class="bar"><i style="width:${pct}%"></i></span><span>${best != null ? pct + '%' : '—'}</span></span>`;
     if (c.paid && !owned().includes(c.pid)) b.insertAdjacentHTML('afterbegin', `<span class="vid-badge">🔒 ${esc(c.price)}</span>`), b.style.position = 'relative';
     b.addEventListener('click', () => (c.paid && !owned().includes(c.pid)) ? lessonBuy(c) : chapterMenu(c));
@@ -982,7 +982,7 @@ function home(){
 
 function chapterMenu(c){
   const p = prog(c.id);
-  if (!p.lesson) return lesson(c, 0);
+  if (!p.lesson || !c.quiz.length) return lesson(c, 0);
   stopTalk(); state.view = 'menu';
   app.innerHTML = `<div class="wrap view">
     <div class="crumb"><button class="back" id="bk">← Chapitres</button><span class="mode">Chapitre ${c.n}</span><h2>${esc(c.title)}</h2></div>
@@ -1034,14 +1034,14 @@ function lesson(c, i){
     document.getElementById('prev').onclick = () => { if (state.i > 0) lesson(c, state.i - 1); };
     document.getElementById('next').onclick = () => {
       if (state.i < c.lesson.length - 1) lesson(c, state.i + 1);
-      else { prog(c.id).lesson = true; save(); if (c.id === 'drones') droneView(c); else quiz(c); }
+      else { prog(c.id).lesson = true; if (!c.quiz.length) { prog(c.id).best = 1; save(); toast('Module terminé. Bravo !'); home(); return; } save(); if (c.id === 'drones') droneView(c); else quiz(c); }
     };
     document.getElementById('replay').onclick = () => { const sl = c.lesson[state.i]; revealStart(sl.p); speak(sl.t, null, revealAll, revealStep); };
   }
   if (c.flang) frCard(s, i);
   const pg = document.getElementById('pg');
   if (pg) { pg.src = pimg(s.p); pg.alt = 'Page ' + s.p + ' du manuel'; }
-  if (pg) document.getElementById('pgCap').textContent = s.p > 1000 ? 'Combat à mains nues · fiche ' + (s.p - 1000) : s.p > 900 ? 'Raisonnement numérique · fiche ' + (s.p - 900) : s.p > 800 ? 'Raisonnement spatial · fiche ' + (s.p - 800) : s.p > 700 ? 'Fiche tireur d\'élite · ' + (s.p - 700) : s.p > 600 ? 'Fiche CQB · ' + (s.p - 600) : s.p > 500 ? 'Fiche topographie · ' + (s.p - 500) : s.p > 400 ? 'Fiche tactique · ' + (s.p - 400) : s.p > 300 ? 'Fiche drones · ' + (s.p - 300) : 'Manuel · page ' + s.p;
+  if (pg) document.getElementById('pgCap').textContent = s.p > 1100 ? 'Close-combat · fiche ' + (s.p - 1100) : s.p > 1000 ? 'Combat à mains nues · fiche ' + (s.p - 1000) : s.p > 900 ? 'Raisonnement numérique · fiche ' + (s.p - 900) : s.p > 800 ? 'Raisonnement spatial · fiche ' + (s.p - 800) : s.p > 700 ? 'Fiche tireur d\'élite · ' + (s.p - 700) : s.p > 600 ? 'Fiche CQB · ' + (s.p - 600) : s.p > 500 ? 'Fiche topographie · ' + (s.p - 500) : s.p > 400 ? 'Fiche tactique · ' + (s.p - 400) : s.p > 300 ? 'Fiche drones · ' + (s.p - 300) : 'Manuel · page ' + s.p;
   const say = document.getElementById('say');
   say.textContent = s.t; say.classList.remove('fade-in'); void say.offsetWidth; say.classList.add('fade-in');
   document.getElementById('chips').innerHTML = (s.k || []).map(k => `<span class="chip">${esc(k)}</span>`).join('');
@@ -1059,7 +1059,7 @@ function lesson(c, i){
   document.getElementById('dots').innerHTML = L.map((_, j) => `<i class="${j === i ? 'on' : j < i ? 'done' : ''}"></i>`).join('');
   document.getElementById('count').textContent = (i + 1) + ' / ' + L.length;
   document.getElementById('prev').disabled = i === 0;
-  document.getElementById('next').innerHTML = last ? 'Au quiz ▶' : 'Suivant ▶';
+  document.getElementById('next').innerHTML = last ? (c.quiz.length ? 'Au quiz ▶' : 'Terminer ✓') : 'Suivant ▶';
   // preload next image
   if (L[i+1] && !c.flang) { const im = new Image(); im.src = pimg(L[i+1].p); }
   revealStart(s.p);
@@ -2282,7 +2282,7 @@ async function deleteAccount(){
    Chaque appareil reçoit un code aléatoire (aucun nom, aucune e-mail). On envoie seulement :
    première et dernière ouverture, langue, plateforme, version, nombre d'ouvertures, de leçons, de quiz et de jeux. */
 const IS_NATIVE = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
-const APP_VER = "51";
+const APP_VER = "52";
 const STATS = (() => {
   const id = (() => { let v = store._sid; if (!v || !/^[a-z0-9]{20,40}$/.test(v)) { v = Array.from(crypto.getRandomValues(new Uint8Array(16)), b => (b % 36).toString(36)).join('') + Date.now().toString(36); store._sid = v; save(); } return v; })();
   const c = store._st || (store._st = { visits: 0, lessons: 0, quizzes: 0, games: 0, first: new Date().toISOString(), lastGame: null });
@@ -2443,7 +2443,7 @@ function lessonBuy(c){
   stopTalk();
   const ov = document.createElement('div'); ov.className = 'sk-ov';
   ov.innerHTML = `<div class="sk-box">${c.flang ? '<div style="font-size:64px;text-align:center">🇫🇷</div>' : `<img src="${pimg(c.lesson[0].p)}" alt="" style="width:100%;max-height:46vh;object-fit:contain;border-radius:10px;margin-bottom:10px">`}
-    <h3>${esc(c.title)}</h3><p>${c.flang ? `Cours premium : ${c.lesson.length} leçons avec la voix française + ${c.quiz.length} questions.` : c.id.startsWith('psy_') ? `Module premium : ${c.lesson.length} fiches de méthode + ${c.quiz.length} tests corrigés.` : `Leçon premium : ${c.lesson.length} fiches animées + quiz.`} Achat unique, elle reste à vous.</p>
+    <h3>${esc(c.title)}</h3><p>${c.flang ? `Cours premium : ${c.lesson.length} leçons avec la voix française + ${c.quiz.length} questions.` : c.id.startsWith('psy_') ? `Module premium : ${c.lesson.length} fiches de méthode + ${c.quiz.length} tests corrigés.` : `Leçon premium : ${c.lesson.length} fiches animées${c.quiz.length ? ' + quiz' : ''}.`} Achat unique, elle reste à vous.</p>
     <div class="row"><button class="btn green" id="lbBuy">Acheter · ${esc(c.price)}</button><button class="btn ghost" id="lbX">Fermer</button></div>
     ${BILL ? '' : '<p style="margin-top:10px">Achat disponible dans l\'application Android (Google Play).</p>'}</div>`;
   document.body.appendChild(ov);

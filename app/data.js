@@ -8631,5 +8631,424 @@ window.COURSE = [
     "e": "Leçon 30 : Poser des questions et la devise. Répétez trois fois la bonne réponse pour la retenir."
    }
   ]
+ },
+ {
+  "id": "close_combat",
+  "n": 27,
+  "title": "Close-combat",
+  "fr": "Menace, distance, armes, sol et mental : 45 fiches animées",
+  "pages": "Fiches 1 à 45 · d'après « Le close-combat, techniques et entraînements »",
+  "paid": true,
+  "pid": "close_combat",
+  "price": "2,00 €",
+  "adEvery": 10,
+  "lesson": [
+   {
+    "p": 1101,
+    "t": "Bienvenue dans le module close-combat. Le close-combat, c'est le combat rapproché du soldat, à mains nues, quand l'arme ne peut plus servir. Il est né au début du vingtième siècle et a été enseigné à grande échelle aux commandos et aux parachutistes pendant la Seconde Guerre mondiale. Son esprit tient en trois mots : rusticité, audace et ruse. Ces fiches résument, avec nos propres mots, les idées du manuel « Le close-combat, techniques et entraînements » de Raphaël et Olivier Saint-Vincent.",
+    "k": [
+     "combat rapproché",
+     "1939-1945",
+     "rusticité, audace, ruse"
+    ]
+   },
+   {
+    "p": 1102,
+    "t": "Juillet 1904, en Mandchourie, pendant la guerre russo-japonaise : des soldats japonais, plus petits, l'emportent au corps à corps grâce à des techniques adaptées. En France, un officier d'artillerie ancien élève de Polytechnique, le commandant Ferrus, étudie ce mystère et publie dès 1905 des ouvrages sur le jiu-jitsu. Pour lui, c'est une gymnastique complète, qui développe à la fois le corps et l'esprit. Les bases du close-combat sont posées.",
+    "k": [
+     "1904, Mandchourie",
+     "commandant Ferrus",
+     "jiu-jitsu"
+    ]
+   },
+   {
+    "p": 1103,
+    "t": "Dans les années 1920 et 1930, le Britannique William Fairbairn dirige l'instruction de la police de Shanghai. Il fait la synthèse du jiu-jitsu et des boxes chinoises, et c'est sans doute lui qui emploie le premier le mot close-combat. Pendant la Seconde Guerre mondiale, il forme les commandos et les services spéciaux alliés. Dès 1943, les parachutistes français découvrent à leur tour une vingtaine de coups d'attaque et de défense, simples mais efficaces.",
+    "k": [
+     "Fairbairn",
+     "commandos",
+     "1943"
+    ]
+   },
+   {
+    "p": 1104,
+    "t": "Après la guerre, chaque pays garde sa propre méthode : le sambo en Russie, le hand to hand combat aux États-Unis. En France, le mot est traduit en 1947 : c'est le « combat rapproché ». Puis la méthode tombe un peu dans l'oubli. Elle renaît dans les années 1980 et 1990 grâce au lieutenant-colonel de gendarmerie Raymond Carter, qui l'adapte au monde moderne. En 2000, une fédération civile de clubs de close-combat est créée.",
+    "k": [
+     "1947",
+     "Carter",
+     "fédération"
+    ]
+   },
+   {
+    "p": 1105,
+    "t": "Le close-combat n'est pas un sport : il n'y a ni arbitre ni catégorie de poids. C'est une technique de soldat. Pourtant, son vrai but n'est pas de donner des recettes infaillibles. Un manuel militaire de 1947 le disait déjà : sa valeur est de donner au combattant une arme de plus, la confiance. Le close-combat apprend aussi à anticiper : lire une situation, garder la distance, et souvent éviter que le combat commence.",
+    "k": [
+     "pas un sport",
+     "la confiance",
+     "anticiper"
+    ]
+   },
+   {
+    "p": 1106,
+    "t": "Savoir se battre impose de connaître la loi. En France, l'article 122-5 du code pénal reconnaît la légitime défense si plusieurs conditions sont réunies en même temps : l'attaque est actuelle ou imminente, elle est injuste, et la riposte est nécessaire, proportionnée et immédiate. Pour la défense d'un simple bien, c'est beaucoup plus strict : on commence par parler. Attention, maîtriser le close-combat peut même aggraver votre cas si votre riposte est disproportionnée.",
+    "k": [
+     "attaque injuste et immédiate",
+     "riposte proportionnée",
+     "article 122-5"
+    ]
+   },
+   {
+    "p": 1107,
+    "t": "La méthode du manuel a une particularité : on peut s'entraîner seul. Cinq minutes suffisent, le matin au réveil, dans un espace de deux mètres carrés, avec des objets du quotidien : une chaise, un mur, un coussin. On étudie une technique par jour, en trois étapes. Le premier mois fait de vous un novice, le deuxième un initié, le troisième un combattant entraîné. Et le secret, c'est la répétition : répéter, répéter, encore répéter.",
+    "k": [
+     "seul",
+     "5 minutes",
+     "répétition"
+    ]
+   },
+   {
+    "p": 1108,
+    "t": "Avant chaque séance, le manuel propose de mesurer sa condition physique avec quatre exercices : les tractions à la barre, les flexions de jambes, les pompes sur les poings et les abdominaux. On fait le maximum de chaque, sans temps de repos, et on reporte les résultats dans un tableau de points. À titre d'exemple, dix-huit tractions ou soixante pompes sur les poings correspondent au niveau excellent. L'important est de voir sa propre progression semaine après semaine.",
+    "k": [
+     "4 exercices",
+     "sans repos",
+     "progression"
+    ]
+   },
+   {
+    "p": 1109,
+    "t": "Le close-combat traite d'abord la menace, avant même l'attaque. Tout dépend de la distance. Si l'adversaire est à un mètre ou moins, il peut vous toucher d'un coup de poing ou de pied : la menace est « à portée ». S'il est plus loin, elle est « hors de portée ». À portée, une action soudaine peut écarter le danger avant qu'il arrive. Hors de portée, il faut d'abord se déplacer, se protéger ou se mettre à l'abri.",
+    "k": [
+     "1 mètre",
+     "à portée",
+     "hors de portée"
+    ]
+   },
+   {
+    "p": 1110,
+    "t": "Face à quelqu'un qui crie et gesticule, la première position est celle de l'apaisement. Vous vous placez de trois-quarts, un pied en avant, et vous levez les mains ouvertes devant vous, paumes vers lui, comme pour dire « calme-toi ». Vous parlez doucement. Pour lui, vous ne voulez pas le conflit. En réalité, vous êtes déjà en garde : vos mains protègent votre visage, et vous contrôlez la distance.",
+    "k": [
+     "trois-quarts",
+     "mains ouvertes",
+     "déjà en garde"
+    ]
+   },
+   {
+    "p": 1111,
+    "t": "Une personne qui se met en garde ou qui menace n'attaque pas toujours. Souvent, elle bluffe pour impressionner ou pour se rassurer. Avant toute action, regardez ses yeux, écoutez ce qu'il dit, observez ses mains. Si c'est un bluff, la meilleure réponse est de rester calme, de garder la distance et de partir. Intervenir sans nécessité vous ferait sortir du cadre de la légitime défense.",
+    "k": [
+     "observer",
+     "bluff",
+     "ne pas intervenir"
+    ]
+   },
+   {
+    "p": 1112,
+    "t": "Aujourd'hui, beaucoup de gens pratiquent un sport de combat. Savoir reconnaître une garde vous renseigne sur l'adversaire. Le boxeur anglais tient les poings fermés devant le visage, coudes serrés. Le boxeur thaï a les mains plus hautes, souvent ouvertes, et il frappe aussi avec les genoux et les tibias. Le karatéka se tient dans une position longue et basse. Chaque garde a ses points forts, et ses habitudes.",
+    "k": [
+     "boxe anglaise",
+     "boxe thaïe",
+     "karaté"
+    ]
+   },
+   {
+    "p": 1113,
+    "t": "Un boxeur est habitué aux gants : pour lui, ses avant-bras sont un bouclier, pas une cible. L'idée du close-combat est de profiter de cette habitude. Un direct sec, poing bien fermé avec les deux premières phalanges, sur l'avant-bras qui protège le visage, le surprend complètement : la trajectoire est très courte, l'œil n'a pas le temps de la voir. Sa garde s'ouvre, son rythme est cassé, et vous pouvez sortir ou enchaîner.",
+    "k": [
+     "avant-bras",
+     "trajectoire courte",
+     "garde ouverte"
+    ]
+   },
+   {
+    "p": 1114,
+    "t": "Pour frapper sans se blesser la main, il faut l'endurcir. Mettez-vous en position de pompes sur les poings, en appui sur les deux premières phalanges, celles de l'index et du majeur. Tenez la position trente secondes. Puis faites des pompes en descendant lentement et en remontant de façon explosive, les coudes serrés contre le corps : trente répétitions en une minute. Commencez sur un tapis, et augmentez progressivement.",
+    "k": [
+     "phalanges",
+     "30 secondes",
+     "pompes explosives"
+    ]
+   },
+   {
+    "p": 1115,
+    "t": "Quand l'adversaire est tout proche et devient menaçant, la frappe paume montante est une réponse simple, apprise dans de nombreuses unités. Depuis la posture d'apaisement, la main ouverte monte d'un coup sous le menton, poussée par les jambes. La tête de l'adversaire part en arrière et il perd l'équilibre. Vous ne restez pas là : vous reculez immédiatement et vous gardez la distance. À l'entraînement, uniquement sur un bouclier ou un sac.",
+    "k": [
+     "paume",
+     "les jambes poussent",
+     "reculer"
+    ]
+   },
+   {
+    "p": 1116,
+    "t": "Face à une position longue et basse, comme celle du karaté, la jambe avant porte beaucoup de poids et ne peut pas esquiver vite. Un coup de pied bas, avec le tibia, sur l'extérieur de la cuisse, la déstabilise. Un cri ou une feinte au visage juste avant détourne son attention. Les mains restent en garde pour enchaîner ou se protéger. À l'entraînement, on vise un sac, ou le pied d'une vieille chaise pour la précision.",
+    "k": [
+     "jambe avant",
+     "tibia",
+     "mains en garde"
+    ]
+   },
+   {
+    "p": 1117,
+    "t": "Le but n'est jamais de gagner un combat, mais de mettre fin au danger. Dès que l'adversaire est surpris ou déséquilibré, vous reprenez la distance. Vous jetez un coup d'œil tout autour de vous : il n'est peut-être pas seul. Puis vous partez vers un lieu sûr, vers vos camarades ou vers les secours. Le close-combat moderne est d'abord une méthode pour se sortir d'une situation, pas pour la prolonger.",
+    "k": [
+     "distance",
+     "regarder autour",
+     "partir"
+    ]
+   },
+   {
+    "p": 1118,
+    "t": "Quand le danger est hors de portée, par exemple une arme pointée sur vous ou des tirs, la règle est simple : disparaître de la vue de l'adversaire. Le manuel appelle cela les déplacements rustiques : se plaquer au sol, ramper, puis bondir vers un abri. Le lieu ne compte pas : trottoir, gravier, boue. Quelques égratignures ne sont rien comparées à une blessure par balle.",
+    "k": [
+     "disparaître",
+     "sol",
+     "abri"
+    ]
+   },
+   {
+    "p": 1119,
+    "t": "Pour se plaquer au sol, on provoque sa propre chute en avant, sur place. Les jambes s'effacent vers l'arrière, comme si un tapis roulant les emportait. Une des jambes se plie pour amortir, comme un ressort. Les mains amortissent aussi, coudes vers l'extérieur, et le visage se tourne sur le côté pour ne pas toucher le sol. On s'entraîne d'abord à genoux, très doucement, puis assis, puis debout au signal « go ».",
+    "k": [
+     "chute avant",
+     "jambe pliée",
+     "visage de côté"
+    ]
+   },
+   {
+    "p": 1120,
+    "t": "Le ramper glissé permet d'avancer vite en restant très bas. Vous êtes sur le flanc, le regard dirigé vers l'avant. Le bras avant sert d'appui et tire le corps, le bras arrière l'aide. La jambe du dessous reste au sol, celle du dessus remonte et pousse : c'est une sorte de pédalage. L'extérieur de la cuisse et de l'avant-bras frottent le sol, et le corps reste de trois-quarts. Entraînez-vous en faisant un parcours chez vous, sans toucher les meubles.",
+    "k": [
+     "sur le flanc",
+     "bras tire, jambe pousse",
+     "pédalage"
+    ]
+   },
+   {
+    "p": 1121,
+    "t": "Entre deux positions au sol, on se déplace par bonds. On se relève d'un coup, on court courbé, vite, en zigzag si possible, vers l'abri suivant : un mur, une voiture, un arbre. On ne reste jamais plus de trois à cinq secondes à découvert. Arrivé derrière l'abri, on se plaque à nouveau au sol. C'est un geste que tout soldat répète des centaines de fois à l'instruction.",
+    "k": [
+     "bond",
+     "3 à 5 secondes",
+     "abri"
+    ]
+   },
+   {
+    "p": 1122,
+    "t": "Le plaquage aux deux jambes vient de la lutte. Face à un adversaire qui avance, vous fléchissez les jambes pour baisser votre niveau, puis vous entrez d'un pas profond. Votre épaule se colle contre son ventre, vos bras saisissent l'arrière de ses genoux, votre tête reste sur le côté. Vous poussez avec les jambes en pivotant, et il bascule. À l'entraînement, uniquement sur tapis, et le partenaire apprend à chuter.",
+    "k": [
+     "changer de niveau",
+     "épaule au ventre",
+     "sur tapis"
+    ]
+   },
+   {
+    "p": 1123,
+    "t": "Quand quelqu'un fonce sur vous, il faut l'arrêter avant qu'il vous saisisse. Le coup de pied de face est fait pour cela : on monte le genou, puis on pousse avec le talon au centre de son corps, au-dessus du nombril. Son élan se retourne contre lui et il repart en arrière. Les mains restent en garde. Puis vous sortez sur le côté pour ne plus être sur sa trajectoire.",
+    "k": [
+     "genou puis talon",
+     "centre du corps",
+     "sortir"
+    ]
+   },
+   {
+    "p": 1124,
+    "t": "Face à une arme, même un professionnel peut être gravement blessé. Avant toute technique, la première règle est la fuite : partir, mettre un obstacle entre vous et lui, une table, une voiture, et appeler à l'aide. Si l'agresseur ne veut que votre portefeuille, donnez-le. On ne combat une arme que si on ne peut absolument pas faire autrement, pour protéger sa vie ou celle des autres.",
+    "k": [
+     "fuir",
+     "obstacle",
+     "dernier recours"
+    ]
+   },
+   {
+    "p": 1125,
+    "t": "Contre une attaque circulaire au couteau, le manuel combine esquive et blocage. Le buste recule vivement, sans que les pieds changent de place, et le ventre se rentre. En même temps, l'avant-bras le plus proche bloque le bras de l'agresseur, et non la lame, avec le bord de l'avant-bras, main ouverte, à angle droit. L'autre bras monte pour protéger le cou et le cœur. On sort ainsi de la zone de danger.",
+    "k": [
+     "reculer le buste",
+     "bloquer le bras",
+     "protéger le cou"
+    ]
+   },
+   {
+    "p": 1126,
+    "t": "Face au couteau, le réflexe naturel est d'attraper la lame : c'est la pire erreur, les mains seraient coupées. On contrôle toujours le bras armé, au niveau du poignet ou de l'avant-bras, si possible avec les deux mains. Une fois le bras contrôlé, on ne cherche pas à faire une prise compliquée : on repousse l'agresseur, on le déséquilibre, et on s'éloigne le plus vite possible. À l'entraînement, uniquement avec un couteau en caoutchouc.",
+    "k": [
+     "pas la lame",
+     "bras armé",
+     "couteau d'entraînement"
+    ]
+   },
+   {
+    "p": 1127,
+    "t": "Avec un bâton ou une matraque, c'est le bout qui frappe le plus fort. Il y a donc deux zones sûres : loin, hors de sa portée, ou tout près de lui, contre son corps, là où le bâton ne peut plus prendre de vitesse. Si on ne peut pas partir, on entre au moment où il lève le bras, les deux avant-bras en protection, et on bloque son bras, pas le bâton. Puis on contrôle ce bras et on se dégage.",
+    "k": [
+     "le bout est dangereux",
+     "loin ou tout près",
+     "bloquer le bras"
+    ]
+   },
+   {
+    "p": 1128,
+    "t": "Une pierre ou un objet lourd frappe souvent de haut en bas, vers la tête. La défense consiste à monter les deux avant-bras croisés en X au-dessus du front, en avançant légèrement pour recevoir son bras et non l'objet. Le choc est réparti sur les deux bras. Aussitôt, on contrôle son bras et on sort sur le côté, hors de sa ligne. Puis, comme toujours, on s'éloigne.",
+    "k": [
+     "attaque verticale",
+     "bras en X",
+     "sortir sur le côté"
+    ]
+   },
+   {
+    "p": 1129,
+    "t": "Certaines armes improvisées, comme une ceinture, une chaîne ou un sac lesté, font de grands mouvements circulaires. On ne les bloque pas : on recule juste assez pour laisser passer le coup dans le vide. C'est juste après son passage, quand l'arme est de l'autre côté et que l'adversaire est découvert, qu'on peut entrer pour le contrôler ou, mieux encore, en profiter pour partir.",
+    "k": [
+     "mouvement circulaire",
+     "laisser passer",
+     "entrer après"
+    ]
+   },
+   {
+    "p": 1130,
+    "t": "Si vous tombez et que l'adversaire reste debout, ne vous relevez pas n'importe comment. Mettez-vous sur le flanc, en appui sur l'avant-bras, une jambe pliée au sol. Levez l'autre pied et une main ouverte vers lui, comme pour lui interdire le passage. Votre regard ne le quitte pas. S'il tourne autour de vous, vous pivotez sur vos appuis pour toujours lui présenter les pieds.",
+    "k": [
+     "sur le flanc",
+     "pied et main en garde",
+     "pivoter"
+    ]
+   },
+   {
+    "p": 1131,
+    "t": "Depuis la garde au sol, si l'adversaire s'approche pour frapper, il regarde votre visage et ne pense pas au danger qui vient d'en bas. Groupez la jambe du dessus, puis déployez-la d'un coup en frappant du talon au centre de son corps. Le coup le repousse et lui coupe le souffle quelques secondes. Ramenez vite la jambe pour qu'il ne la saisisse pas, et relevez-vous en garde, à distance.",
+    "k": [
+     "groupez",
+     "talon",
+     "se relever"
+    ]
+   },
+   {
+    "p": 1132,
+    "t": "Pour se relever face à un adversaire debout, on garde toujours une protection. Assis, une main au sol derrière vous, l'autre main devant le visage, un pied à plat. Poussez sur la main et le pied, et glissez l'autre jambe loin derrière vous, à l'écart de l'adversaire. Vous vous retrouvez debout, directement en garde, à distance. Répétez ce mouvement des deux côtés jusqu'à ce qu'il devienne automatique.",
+    "k": [
+     "main au sol",
+     "jambe derrière",
+     "debout en garde"
+    ]
+   },
+   {
+    "p": 1133,
+    "t": "Beaucoup de gens pratiquent aujourd'hui le jiu-jitsu brésilien, très efficace au sol. Si vous vous retrouvez à genoux, entre les jambes d'un adversaire allongé sur le dos, c'est sa position préférée : la garde. Gardez le dos bien droit et la tête haute, les mains posées sur ses hanches pour le maintenir à distance. Évitez de laisser un bras à l'intérieur et l'autre dehors : c'est l'entrée de l'étranglement en triangle.",
+    "k": [
+     "dos droit",
+     "mains sur les hanches",
+     "pas un bras dedans"
+    ]
+   },
+   {
+    "p": 1134,
+    "t": "Dans la garde de l'adversaire, inutile de rester au sol : c'est son terrain. Toujours le dos droit, posez un pied à plat, puis l'autre, et levez-vous en gardant les mains sur ses hanches ou ses genoux. Ses jambes s'ouvrent. Reculez alors d'un pas, hors de portée de ses pieds, et reprenez votre garde debout. En situation réelle, c'est debout que vous êtes en sécurité.",
+    "k": [
+     "pied à plat",
+     "dos droit",
+     "reculer"
+    ]
+   },
+   {
+    "p": 1135,
+    "t": "L'étranglement en triangle se fait avec les jambes : l'adversaire au sol piège votre cou et un de vos bras entre ses cuisses. La défense commence avant : ne jamais laisser un bras à l'intérieur de ses jambes et l'autre à l'extérieur. S'il commence la prise, redressez immédiatement la posture, collez l'épaule contre sa jambe, rentrez le bras piégé contre votre corps, et relevez-vous. Seul un instructeur peut vous montrer ces défenses en détail.",
+    "k": [
+     "un bras dedans",
+     "posture",
+     "se relever"
+    ]
+   },
+   {
+    "p": 1136,
+    "t": "La guillotine est un étranglement par l'avant : l'adversaire entoure votre cou avec son bras. Premier réflexe, soulager. Une main attrape son poignet, celui du bras qui serre, et tire fort vers le bas pour pouvoir respirer. Le menton se rentre contre la poitrine, la nuque pousse vers son biceps. L'autre main passe par-dessus son épaule, dans son dos, et le serre contre vous pour l'empêcher de se servir de sa force.",
+    "k": [
+     "main sur le poignet",
+     "menton rentré",
+     "main dans le dos"
+    ]
+   },
+   {
+    "p": 1137,
+    "t": "Une fois l'étranglement soulagé, on passe à la deuxième étape. Tout en continuant à tirer sur son poignet, vous basculez le poids de votre corps sur son buste, sur le côté. Votre épaule pèse sur lui, il est écrasé sous votre poids et ne peut plus garder ses jambes croisées. Sa prise s'affaiblit et votre cou se libère. Cette défense se travaille sur tapis, lentement, avec un partenaire qui lâche au premier signal.",
+    "k": [
+     "basculer",
+     "poids du corps",
+     "le cou se libère"
+    ]
+   },
+   {
+    "p": 1138,
+    "t": "La position montée est une des pires au sol : l'adversaire est assis sur votre ventre et peut frapper vers le bas avec tout son poids. Premier réflexe, protéger le visage avec les avant-bras, les coudes serrés. Ne vous retournez jamais sur le ventre pour fuir : il serait dans votre dos. Gardez votre calme et respirez : vous allez utiliser une technique pour sortir, pas la force.",
+    "k": [
+     "position montée",
+     "protéger le visage",
+     "pas de dos"
+    ]
+   },
+   {
+    "p": 1139,
+    "t": "Pour sortir de dessous, le manuel enseigne la « langouste ». Pivotez sur le flanc pour créer un espace. D'une main, saisissez son vêtement et placez le coude contre sa hanche. De l'autre avant-bras, poussez son genou vers l'arrière : son poids est sur ses genoux, le genou poussé glisse. En même temps, vos pieds vous aident à pivoter pour placer vos hanches en travers des siennes. Une de vos jambes peut alors sortir.",
+    "k": [
+     "sur le flanc",
+     "coude et avant-bras",
+     "hanches en travers"
+    ]
+   },
+   {
+    "p": 1140,
+    "t": "Une fois une jambe sortie, crochetez sa jambe avec la vôtre : c'est la demi-garde. Votre jambe du dessous tire vers le sol et le déséquilibre sur le côté. Il doit poser une main pour ne pas tomber. C'est le moment de vous dégager complètement, de vous asseoir, et de vous relever avec la technique du relevé en sécurité, en gardant la distance. Encore une fois : au sol, la priorité est de se relever.",
+    "k": [
+     "crocheter",
+     "déséquilibrer",
+     "se relever"
+    ]
+   },
+   {
+    "p": 1141,
+    "t": "Un vrai affrontement provoque un choc : le cœur s'emballe, la vision se rétrécit, les jambes tremblent, on n'entend plus rien. C'est normal, c'est l'adrénaline. Le manuel insiste : l'entraînement doit préparer à ce choc émotionnel, pour que le corps sache quoi faire quand l'esprit est débordé. La respiration est votre outil : expirations longues, rythme lent, et le contrôle revient.",
+    "k": [
+     "adrénaline",
+     "vision en tunnel",
+     "respiration"
+    ]
+   },
+   {
+    "p": 1142,
+    "t": "Chaque technique du manuel s'accompagne d'un entraînement psychologique : pendant que vous répétez les gestes, vous imaginez la scène réelle, le plus précisément possible. Le lieu, la lumière, l'adversaire qui avance, votre réaction rapide et juste, puis votre départ. Cette visualisation habitue le cerveau à la situation. Le jour où elle arrive, elle n'est plus totalement inconnue.",
+    "k": [
+     "imaginer",
+     "le plus précis possible",
+     "le cerveau s'entraîne"
+    ]
+   },
+   {
+    "p": 1143,
+    "t": "Le principe de base du close-combat est la répétition. On apprend d'abord chaque technique lentement, étape par étape. Puis on la répète dans le vide, comme le shadow des boxeurs, de plus en plus vite. Un geste répété des centaines de fois devient un réflexe : il revient tout seul, même sous le stress, sans réfléchir. C'est pourquoi cinq minutes chaque jour valent mieux qu'une heure par mois.",
+    "k": [
+     "lentement",
+     "dans le vide",
+     "réflexe"
+    ]
+   },
+   {
+    "p": 1144,
+    "t": "Pour le close-combat, le corps nourrit l'esprit, et l'esprit nourrit le corps. Un entraînement exigeant, dans la boue, la sueur et la fatigue, rend le mental plus solide. On apprend que l'inconfort se supporte, qu'on peut continuer quand on croit ne plus pouvoir. Les auteurs résument cet état d'esprit par une idée simple : de toutes nos facultés, la volonté est celle qui n'a pas de limite.",
+    "k": [
+     "entraînement dur",
+     "inconfort",
+     "volonté"
+    ]
+   },
+   {
+    "p": 1145,
+    "t": "Résumons. Le close-combat est né de l'expérience des soldats, de la Mandchourie aux commandos de 1944. Il traite la menace avant l'attaque, selon la distance. Face à une arme, on fuit d'abord. Au sol, on se protège et on se relève. Et on s'entraîne seul, cinq minutes par jour, en répétant sans cesse. Son esprit : rusticité, audace et ruse, toujours dans le cadre de la loi. Pour aller plus loin, rejoignez un club encadré par un instructeur. Bon entraînement, légionnaire !",
+    "k": [
+     "rusticité",
+     "audace et ruse",
+     "la confiance"
+    ]
+   }
+  ],
+  "quiz": []
  }
 ];
