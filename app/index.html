@@ -902,7 +902,7 @@ function home(){
   <div class="wrap">
     <section class="hero">
       <div>
-        <div class="eyebrow">Légion étrangère · cours complet du manuel <span style="opacity:.55">· version 53</span></div>
+        <div class="eyebrow">Légion étrangère · cours complet du manuel <span style="opacity:.55">· version 54</span></div>
         <h1>Apprenez.<br>Puis <em>prouvez-le.</em></h1>
         <div class="bubble fade-in"><div class="who"><span class="dot"></span>Instructeur</div><span id="greet">${esc(greet)}</span></div>
         <div class="row" style="margin-top:16px">
@@ -2282,7 +2282,7 @@ async function deleteAccount(){
    Chaque appareil reçoit un code aléatoire (aucun nom, aucune e-mail). On envoie seulement :
    première et dernière ouverture, langue, plateforme, version, nombre d'ouvertures, de leçons, de quiz et de jeux. */
 const IS_NATIVE = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
-const APP_VER = "53";
+const APP_VER = "54";
 const STATS = (() => {
   const id = (() => { let v = store._sid; if (!v || !/^[a-z0-9]{20,40}$/.test(v)) { v = Array.from(crypto.getRandomValues(new Uint8Array(16)), b => (b % 36).toString(36)).join('') + Date.now().toString(36); store._sid = v; save(); } return v; })();
   const c = store._st || (store._st = { visits: 0, lessons: 0, quizzes: 0, games: 0, first: new Date().toISOString(), lastGame: null });
