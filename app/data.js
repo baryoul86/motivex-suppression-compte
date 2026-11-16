@@ -1859,6 +1859,78 @@ window.COURSE = [
      "côté faible",
      "lèvres vers le bas"
     ]
+   },
+   {
+    "p": 1401,
+    "t": "Nouvelles fiches d'après un manuel de tir tactique de forces spéciales. Leur devise : lent, c'est fluide, et fluide, c'est rapide. On ne cherche pas la vitesse au début. On répète chaque geste lentement et parfaitement : prise, position, visée, pression sur la détente. Un geste parfait répété mille fois devient fluide, et un geste fluide devient naturellement rapide. Vouloir aller vite trop tôt, c'est apprendre des erreurs.",
+    "k": [
+     "lent",
+     "fluide",
+     "rapide"
+    ]
+   },
+   {
+    "p": 1402,
+    "t": "La prise de l'arme de poing conditionne tout le tir. La main forte est placée le plus haut possible sur la poignée, dans l'axe du canon. La main faible vient remplir l'espace libre et plaque ses doigts sur ceux de la main forte, les deux pouces vers l'avant. C'est la main faible qui serre le plus : la main forte doit rester libre pour actionner la détente. La prise est ferme mais sans crispation, pour ne pas trembler.",
+    "k": [
+     "main haute",
+     "main faible serre",
+     "sans crispation"
+    ]
+   },
+   {
+    "p": 1403,
+    "t": "La visée se fait en deux temps. D'abord l'alignement : le guidon est placé au milieu de l'encoche du cran de mire, avec autant de lumière à gauche qu'à droite, et son sommet à la même hauteur. Ensuite la mise au point : l'œil ne peut voir net qu'à une seule distance, et c'est le guidon qu'il doit voir net. La cible reste légèrement floue. Une petite erreur d'alignement au départ devient une grosse erreur sur la cible.",
+    "k": [
+     "alignement",
+     "guidon net",
+     "cible floue"
+    ]
+   },
+   {
+    "p": 1404,
+    "t": "Le coup se joue sur la détente. On pose la première phalange de l'index sur la détente, et on presse progressivement, tout droit vers l'arrière, sans bouger le reste de la main. On ne cherche pas à décider du moment du départ : il doit presque surprendre. Après le coup, on relâche la détente seulement jusqu'au petit clic du réarmement, et on est prêt pour le suivant. Donner un coup sec fait partir la balle à côté.",
+    "k": [
+     "pression progressive",
+     "départ surprise",
+     "réarmement"
+    ]
+   },
+   {
+    "p": 1405,
+    "t": "Chaque respiration fait monter et descendre l'arme. Pour un tir précis, on respire normalement, puis on profite de la pause naturelle qui suit l'expiration : le corps est calme, l'arme est stable. C'est là qu'on presse la détente. Si le tir tarde, on ne bloque pas plus de quelques secondes : on reprend une respiration et on recommence. En tir tactique rapide, on ne pense plus à la respiration : on tire au rythme de l'action.",
+    "k": [
+     "pause naturelle",
+     "après l'expiration",
+     "pas trop longtemps"
+    ]
+   },
+   {
+    "p": 1406,
+    "t": "Entre deux tirs, l'arme de poing est tenue dans une position d'attente. En garde basse, l'arme est tendue devant soi, canon vers le sol, prête à remonter. En position compacte, l'arme est ramenée contre la poitrine : utile dans un couloir ou près d'une porte, pour qu'on ne puisse pas la saisir. La position Sul garde l'arme contre le corps, canon vers le sol, pour se déplacer au milieu de ses équipiers sans jamais les viser.",
+    "k": [
+     "garde basse",
+     "compacte",
+     "Sul"
+    ]
+   },
+   {
+    "p": 1407,
+    "t": "Le manuel distingue la position allongée, bras presque tendus, et la position recueillie, bras repliés. Bras tendus, l'arme est plus stable et l'on vise mieux à distance. Bras repliés, l'arme est plus proche du corps : on se déplace plus facilement et un adversaire a plus de mal à l'attraper, ce qui compte dans les espaces étroits. Entre les deux, il existe des positions intermédiaires. On choisit selon la distance de la cible et la place disponible.",
+    "k": [
+     "allongée",
+     "recueillie",
+     "selon l'espace"
+    ]
+   },
+   {
+    "p": 1408,
+    "t": "Toutes les écoles de tir enseignent les mêmes règles de sécurité. Un : toute arme est considérée comme chargée. Deux : on ne pointe jamais le canon vers ce qu'on ne veut pas détruire. Trois : le doigt reste allongé le long de la carcasse, hors de la détente, tant que les organes de visée ne sont pas sur la cible. Quatre : on est sûr de sa cible et de ce qu'il y a autour et derrière. La plupart des accidents viennent d'une seule règle oubliée.",
+    "k": [
+     "toujours chargée",
+     "doigt hors détente",
+     "derrière la cible"
+    ]
    }
   ],
   "quiz": [
@@ -1982,6 +2054,50 @@ window.COURSE = [
     ],
     "a": 1,
     "e": "Inerte pour la manipulation, à blanc pour les exercices tactiques et démonstrations, de guerre pour le tir réel et les missions."
+   },
+   {
+    "q": "Que signifie « lent, c'est fluide ; fluide, c'est rapide » ?",
+    "o": [
+     "Il faut tirer lentement en combat",
+     "La vitesse vient de gestes appris lentement et parfaitement",
+     "Il faut viser longtemps",
+     "La rapidité n'est pas importante"
+    ],
+    "a": 1,
+    "e": "On répète lentement et parfaitement : la vitesse arrive ensuite."
+   },
+   {
+    "q": "Pendant la visée, que doit-on voir net ?",
+    "o": [
+     "La cible",
+     "Le cran de mire",
+     "Le guidon",
+     "Tout en même temps"
+    ],
+    "a": 2,
+    "e": "L'œil fait le point sur le guidon, la cible reste légèrement floue."
+   },
+   {
+    "q": "Avec l'arme de poing, quelle main serre le plus ?",
+    "o": [
+     "La main forte",
+     "La main faible",
+     "Les deux pareil",
+     "Aucune"
+    ],
+    "a": 1,
+    "e": "La main forte reste libre pour presser la détente."
+   },
+   {
+    "q": "Où est le doigt tant qu'on ne tire pas ?",
+    "o": [
+     "Sur la détente",
+     "Le long de la carcasse, hors de la détente",
+     "Sur le chargeur",
+     "Dans le pontet"
+    ],
+    "a": 1,
+    "e": "C'est une des quatre règles de sécurité."
    }
   ]
  },
@@ -3047,6 +3163,114 @@ window.COURSE = [
      "menace omnidirectionnelle",
      "DRILL, DRILL, DRILL"
     ]
+   },
+   {
+    "p": 1201,
+    "t": "Nouvelles fiches jungle, d'après le manuel américain FM 90-5. Il n'existe pas une jungle mais plusieurs. La forêt primaire a de grands arbres dont les branches forment plusieurs toits : le sol reste assez dégagé, on y marche bien, mais on voit rarement à plus de cinquante mètres. La forêt secondaire pousse là où la forêt a été coupée : des broussailles très denses, où l'on avance lentement et où la vue se limite à quelques mètres. Il y a aussi les mangroves, les marais, les savanes à herbes hautes et les bambous.",
+    "k": [
+     "forêt primaire",
+     "forêt secondaire",
+     "mangrove, savane"
+    ]
+   },
+   {
+    "p": 1202,
+    "t": "En zone équatoriale, il fait chaud toute l'année, l'humidité dépasse souvent quatre-vingt-dix pour cent et il pleut presque chaque jour, souvent à heure fixe. La transpiration ne sèche pas, le corps se refroidit mal. Les nuits, elles, peuvent être fraîches : on a parfois plus froid que chaud. Le corps s'adapte en dix à quatorze jours : pendant cette période, on augmente l'effort progressivement et on boit beaucoup, même sans avoir soif.",
+    "k": [
+     "chaleur humide",
+     "pluie quotidienne",
+     "10 à 14 jours"
+    ]
+   },
+   {
+    "p": 1203,
+    "t": "Pour la Légion, la jungle, c'est d'abord la Guyane. Le 3e régiment étranger d'infanterie, à Kourou, est le régiment de la forêt équatoriale. Il protège le centre spatial guyanais et participe à l'opération Harpie, la lutte contre l'orpaillage illégal, avec des missions de plusieurs semaines en forêt. Le centre d'entraînement en forêt équatoriale, le CEFE, y forme les soldats français et étrangers : on y apprend à vivre, se déplacer et combattre dans la jungle.",
+    "k": [
+     "3e REI",
+     "CEFE",
+     "opération Harpie"
+    ]
+   },
+   {
+    "p": 1204,
+    "t": "En jungle, la maladie met plus de soldats hors de combat que l'ennemi. Trois règles. L'eau : boire beaucoup, mais toujours de l'eau purifiée par pastilles ou filtre. Les pieds : les sécher et les masser à chaque arrêt, changer de chaussettes, sinon apparaissent mycoses et plaies. Les moustiques : ils transmettent le paludisme et la dengue ; on prend son traitement préventif, on dort sous moustiquaire et on met du répulsif, surtout au crépuscule et à l'aube.",
+    "k": [
+     "eau purifiée",
+     "pieds secs",
+     "paludisme"
+    ]
+   },
+   {
+    "p": 1205,
+    "t": "La jungle n'est pas aussi dangereuse que dans les films, mais il faut de la prudence. Les serpents cherchent à fuir : on regarde où on met les pieds et les mains, surtout en dégageant le sol. Toute morsure est traitée comme venimeuse : on calme le blessé, on immobilise le membre et on évacue. Contre les sangsues, les fourmis et les scorpions : pantalon rentré dans les rangers, on secoue ses vêtements et ses chaussures avant de les mettre. On ne retire pas une sangsue de force.",
+    "k": [
+     "serpents",
+     "morsure = venimeuse",
+     "secouer ses affaires"
+    ]
+   },
+   {
+    "p": 1206,
+    "t": "Le manuel le rappelle avec une citation du maréchal Slim, en Birmanie : au début, pour ses soldats, la jungle était un lieu étrange et effrayant, alors que l'ennemi y voyait un moyen de se cacher et de surprendre. La peur est le premier ennemi. Un soldat qui panique ne vaut plus rien. La règle d'or : garder la tête froide et réfléchir calmement. Avec l'entraînement, la jungle cesse d'être un obstacle et devient une alliée.",
+    "k": [
+     "la peur",
+     "tête froide",
+     "une alliée"
+    ]
+   },
+   {
+    "p": 1207,
+    "t": "Sous la canopée, on ne voit ni le soleil ni les reliefs : impossible de s'orienter à vue. On navigue à la boussole, en suivant un azimut, et on compte ses pas ou le temps de marche pour estimer la distance parcourue. Un équipier tient l'azimut, un autre compte. Les rivières et les lignes de crête sont les meilleurs repères. Le chef de groupe doit connaître sa position à tout moment : se perdre en jungle peut coûter très cher.",
+    "k": [
+     "boussole",
+     "compter les pas",
+     "rivières"
+    ]
+   },
+   {
+    "p": 1208,
+    "t": "En jungle, l'ouïe compte plus que la vue. On avance lentement, en écartant les branches avec les mains plutôt qu'en les coupant. La machette s'entend de loin et laisse une trace : on ne l'utilise que si c'est nécessaire. Le groupe s'arrête régulièrement pour écouter, en silence. Les gestes remplacent la voix. Une colonne bruyante est une colonne repérée.",
+    "k": [
+     "discrétion",
+     "machette = bruit",
+     "écouter"
+    ]
+   },
+   {
+    "p": 1209,
+    "t": "Les rivières sont à la fois des routes et des obstacles. Avant de traverser, on observe la rive opposée : c'est un endroit idéal pour une embuscade. Une partie du groupe reste en couverture. Un bon nageur passe le premier avec une corde, qui est tendue et attachée solidement entre deux arbres. On traverse un par un, le sac emballé dans un sac étanche, les sangles et la jugulaire défaites pour pouvoir se dégager si l'on tombe.",
+    "k": [
+     "couverture",
+     "corde tendue",
+     "sac étanche"
+    ]
+   },
+   {
+    "p": 1210,
+    "t": "En jungle, on ne dort jamais à même le sol : humidité, insectes et serpents. On tend un hamac entre deux arbres solides, avec une bâche au-dessus et une moustiquaire. On choisit un endroit hors des lits de rivière, qui peuvent monter très vite pendant la nuit, et loin des arbres morts ou des grosses branches qui peuvent tomber. Le bivouac est gardé par des sentinelles et aucune lumière n'est visible de l'extérieur.",
+    "k": [
+     "hamac",
+     "pas près de l'eau",
+     "sentinelles"
+    ]
+   },
+   {
+    "p": 1211,
+    "t": "Si vous êtes séparé de votre groupe, première règle : s'arrêter et réfléchir, sans paniquer. Restez sur place si vous pensez être recherché. L'eau est la priorité : eau de pluie récupérée sur une bâche, certaines lianes, toujours purifiée si possible. Ne mangez pas de plante que vous ne connaissez pas. Pour retrouver des habitants, suivez un cours d'eau vers l'aval : les villages et les pistes sont souvent au bord des rivières.",
+    "k": [
+     "ne pas paniquer",
+     "eau d'abord",
+     "suivre l'aval"
+    ]
+   },
+   {
+    "p": 1212,
+    "t": "En jungle, les combats éclatent soudainement, à quelques mètres seulement, souvent sans voir l'ennemi. Les grandes manœuvres sont impossibles : ce sont les petites unités, le groupe et la section, qui combattent, avec des chefs qui doivent prendre des initiatives. Les réactions au contact et aux embuscades doivent être des réflexes, répétés à l'entraînement jusqu'à devenir automatiques. Discrétion, patience et endurance font la différence.",
+    "k": [
+     "contact soudain",
+     "petites unités",
+     "réflexes"
+    ]
    }
   ],
   "quiz": [
@@ -3137,6 +3361,72 @@ window.COURSE = [
     ],
     "a": 1,
     "e": "La menace est omnidirectionnelle : entraînement permanent."
+   },
+   {
+    "q": "Pourquoi la vue est-elle très réduite en forêt secondaire ?",
+    "o": [
+     "Il fait nuit en permanence",
+     "Les broussailles très denses limitent la vue à quelques mètres",
+     "Il y a toujours du brouillard",
+     "Les arbres sont trop hauts"
+    ],
+    "a": 1,
+    "e": "La forêt secondaire repousse là où la forêt a été coupée : la végétation basse est très dense."
+   },
+   {
+    "q": "Quel régiment de la Légion est basé en Guyane ?",
+    "o": [
+     "Le 2e REP",
+     "Le 1er REC",
+     "Le 3e REI",
+     "Le 4e RE"
+    ],
+    "a": 2,
+    "e": "Le 3e régiment étranger d'infanterie est basé à Kourou."
+   },
+   {
+    "q": "Comment traiter une morsure de serpent ?",
+    "o": [
+     "Comme si elle était venimeuse",
+     "On l'ignore si elle fait peu mal",
+     "On aspire le venin avec la bouche",
+     "On court pour évacuer plus vite"
+    ],
+    "a": 0,
+    "e": "Toute morsure est traitée comme venimeuse : calme, membre immobilisé, évacuation."
+   },
+   {
+    "q": "Où installer son bivouac ?",
+    "o": [
+     "Dans le lit d'une rivière à sec",
+     "Sous un grand arbre mort",
+     "À même le sol pour être discret",
+     "En hamac, loin des rivières et des arbres morts"
+    ],
+    "a": 3,
+    "e": "Une rivière peut monter vite la nuit et un arbre mort peut tomber."
+   },
+   {
+    "q": "Seul et perdu en forêt, quelle direction suivre pour trouver des habitants ?",
+    "o": [
+     "Monter tout droit sur la colline",
+     "Suivre un cours d'eau vers l'aval",
+     "Marcher vers l'endroit le plus dense",
+     "Tourner en rond pour être vu"
+    ],
+    "a": 1,
+    "e": "Les villages et les pistes sont souvent au bord des rivières."
+   },
+   {
+    "q": "Pourquoi éviter la machette quand c'est possible ?",
+    "o": [
+     "Elle s'abîme vite",
+     "Elle fait du bruit et laisse une trace",
+     "Elle est interdite",
+     "Elle attire les serpents"
+    ],
+    "a": 1,
+    "e": "La discrétion est vitale : on écarte la végétation avec les mains."
    }
   ]
  },
@@ -3716,6 +4006,105 @@ window.COURSE = [
      "position de sécurité",
      "pas chassés"
     ]
+   },
+   {
+    "p": 1501,
+    "t": "Nouvelles fiches de tactique, d'après un manuel de formation du combattant et un manuel sur l'embuscade. Chaque combattant a des devoirs, quelle que soit sa place. S'orienter et savoir où il est. Progresser en utilisant le terrain. Observer en permanence. Se camoufler. Désigner un objectif à ses camarades. Employer ses armes au bon moment. Communiquer, rendre compte à son chef, et garder la liaison avec son binôme.",
+    "k": [
+     "s'orienter",
+     "observer",
+     "rendre compte"
+    ]
+   },
+   {
+    "p": 1502,
+    "t": "Se déplacer, c'est progresser vers un point en utilisant le terrain : par bonds courts, d'un abri à l'autre, en choisissant le prochain abri avant de partir. Se poster, c'est s'installer à un endroit d'où l'on peut observer et tirer en étant protégé et caché. On tire par le côté d'un abri, jamais par-dessus, et on évite les lignes de crête où la silhouette se découpe sur le ciel.",
+    "k": [
+     "par bonds",
+     "se poster",
+     "par le côté"
+    ]
+   },
+   {
+    "p": 1503,
+    "t": "Le binôme est la plus petite cellule de combat. Les deux équipiers savent guetter, c'est-à-dire surveiller un secteur, éclairer, c'est-à-dire partir en avant pour voir, et appuyer, c'est-à-dire couvrir par le feu celui qui bouge. Ils savent aussi défendre un point, assurer la liaison avec le reste du groupe et porter un message. La règle d'or : les deux équipiers restent toujours à vue et à portée de voix l'un de l'autre.",
+    "k": [
+     "guetter",
+     "éclairer",
+     "appuyer"
+    ]
+   },
+   {
+    "p": 1504,
+    "t": "Pour que tout le monde tire sur la même cible, il faut savoir la désigner. On part d'un repère connu de tous, ou du système de l'horloge : midi droit devant, trois heures à droite. On donne la distance, puis on décrit ce qu'on voit. Par exemple : « Arbre isolé, deux heures, trois cents mètres, deux hommes au pied de l'arbre. » Celui qui reçoit l'information répète : « Vu ! ».",
+    "k": [
+     "repère",
+     "horloge",
+     "distance et description"
+    ]
+   },
+   {
+    "p": 1505,
+    "t": "Rendre compte, c'est informer son chef de ce qu'on voit ou de ce qu'on a fait. Le message est court et clair. On répond aux questions essentielles : qui, quoi, où, quand, combien. On donne des faits, pas des suppositions. Et on termine par ce que l'on fait : « Je reste en observation ». Un chef bien informé peut décider vite ; un compte rendu confus fait perdre un temps précieux.",
+    "k": [
+     "court et clair",
+     "qui quoi où",
+     "ce que je fais"
+    ]
+   },
+   {
+    "p": 1506,
+    "t": "Une embuscade est une attaque par surprise, lancée depuis une position cachée, contre un ennemi en mouvement ou arrêté temporairement. Elle est courte, violente et à faible distance. On distingue l'embuscade préparée, planifiée et répétée à l'avance, et l'embuscade d'opportunité, montée rapidement quand une occasion se présente. Dans les deux cas, la surprise est l'élément décisif.",
+    "k": [
+     "surprise",
+     "préparée ou d'opportunité",
+     "courte et violente"
+    ]
+   },
+   {
+    "p": 1507,
+    "t": "Une embuscade comporte plusieurs éléments. L'élément d'assaut est placé face à la zone de destruction, la portion de terrain où l'ennemi sera pris. L'élément d'appui fournit les feux de soutien. Les éléments de sûreté sont placés sur les côtés et à l'arrière : ils annoncent l'arrivée de l'ennemi, empêchent qu'on soit surpris soi-même et couvrent le repli. Le chef déclenche l'action, en général par le premier tir.",
+    "k": [
+     "assaut",
+     "appui",
+     "sûreté"
+    ]
+   },
+   {
+    "p": 1508,
+    "t": "Il existe plusieurs dispositifs. L'embuscade linéaire place l'élément d'assaut parallèlement à la route : simple et rapide à mettre en place. L'embuscade en L ajoute un élément sur le flanc, au bout de la zone, pour croiser les feux. L'embuscade en V place deux branches qui se rejoignent, plutôt en terrain ouvert. Plus le dispositif est complexe, plus il demande de discipline pour que les équipes ne se tirent pas dessus.",
+    "k": [
+     "linéaire",
+     "en L",
+     "en V"
+    ]
+   },
+   {
+    "p": 1509,
+    "t": "Une embuscade réussie repose sur quelques principes. La surprise : installation discrète, camouflage soigné, silence absolu, parfois pendant des heures. La coordination : chacun connaît son secteur de tir et le signal de déclenchement. Le contrôle : le chef garde la main du début à la fin, y compris pour arrêter les tirs. La simplicité du plan. Et un itinéraire de repli et un point de ralliement prévus à l'avance.",
+    "k": [
+     "surprise",
+     "coordination",
+     "repli prévu"
+    ]
+   },
+   {
+    "p": 1510,
+    "t": "Si l'on tombe dans une embuscade, la règle est simple : ne jamais rester dans la zone de destruction, là où l'ennemi a préparé ses feux. Si l'embuscade est proche, à quelques dizaines de mètres, on riposte immédiatement par un feu violent et on donne l'assaut à travers la position ennemie : c'est souvent la seule chance. Si elle est lointaine, on sort au plus vite de la zone, en se couvrant mutuellement, avant de manœuvrer.",
+    "k": [
+     "zone de destruction",
+     "proche : assaut",
+     "lointaine : sortir"
+    ]
+   },
+   {
+    "p": 1511,
+    "t": "La meilleure défense contre une embuscade est de ne pas y tomber. L'ennemi s'installe là où il sait que vous passerez : il faut donc éviter les habitudes, ne jamais reprendre deux fois le même itinéraire ni les mêmes horaires. Les passages obligés comme les ponts, les gués, les vallées étroites ou les lisières sont reconnus avant d'y engager tout le groupe. Les formations, comme le Y en jungle, aident à déceler une embuscade latérale.",
+    "k": [
+     "pas d'habitudes",
+     "passages obligés",
+     "éclairer"
+    ]
    }
   ],
   "quiz": [
@@ -3828,6 +4217,72 @@ window.COURSE = [
     ],
     "a": 2,
     "e": "Chacun tient sa zone ; on tire dans celle d'un camarade seulement s'il est en danger ou si sa zone est sécurisée."
+   },
+   {
+    "q": "Que signifie « à 2 heures » pour désigner un objectif ?",
+    "o": [
+     "Dans deux heures",
+     "Un peu à droite, en direction des 2 heures d'une horloge",
+     "À 200 mètres",
+     "Derrière soi"
+    ],
+    "a": 1,
+    "e": "Midi est droit devant ; 3 heures, à droite."
+   },
+   {
+    "q": "Par où tire-t-on derrière un abri ?",
+    "o": [
+     "Par-dessus",
+     "Par le côté",
+     "À travers",
+     "On ne tire pas"
+    ],
+    "a": 1,
+    "e": "Par le côté, la silhouette est moins visible."
+   },
+   {
+    "q": "Quel élément d'une embuscade surveille les flancs et couvre le repli ?",
+    "o": [
+     "L'assaut",
+     "L'appui",
+     "La sûreté",
+     "Le PC"
+    ],
+    "a": 2,
+    "e": "Les éléments de sûreté préviennent et couvrent."
+   },
+   {
+    "q": "Pris dans une embuscade proche, que faire ?",
+    "o": [
+     "Rester couché sans tirer",
+     "Riposter immédiatement et donner l'assaut",
+     "Se rendre",
+     "Attendre les ordres sans bouger"
+    ],
+    "a": 1,
+    "e": "Rester dans la zone de destruction, c'est mourir."
+   },
+   {
+    "q": "Comment prévenir une embuscade ?",
+    "o": [
+     "Prendre toujours le même chemin",
+     "Varier itinéraires et horaires, reconnaître les passages obligés",
+     "Marcher plus vite",
+     "Faire du bruit"
+    ],
+    "a": 1,
+    "e": "L'ennemi s'installe là où il sait que vous passerez."
+   },
+   {
+    "q": "Que fait un rapport bien fait ?",
+    "o": [
+     "Il donne des suppositions",
+     "Il répond à qui, quoi, où, quand, combien",
+     "Il est le plus long possible",
+     "Il attend la fin de la mission"
+    ],
+    "a": 1,
+    "e": "Court, clair, factuel, puis ce que je fais."
    }
   ]
  },
@@ -4291,6 +4746,78 @@ window.COURSE = [
      "éviter les habitudes",
      "civils et règles d'engagement"
     ]
+   },
+   {
+    "p": 1601,
+    "t": "Nouvelles fiches d'après le manuel de combat en zone urbaine du 3e Tercio de la Légion espagnole. Longer un bâtiment, c'est passer devant des fenêtres. On ne passe jamais debout devant une fenêtre : on se baisse sous l'appui, en restant collé au mur, et on se relève une fois passé. Pour une ouverture au ras du sol, comme un soupirail, on l'enjambe d'un pas rapide. Le reste de l'équipe couvre l'ouverture pendant le passage.",
+    "k": [
+     "sous l'appui",
+     "collé au mur",
+     "couvert par l'équipe"
+    ]
+   },
+   {
+    "p": 1602,
+    "t": "Avant d'entrer, l'équipe se met en colonne, collée au mur près de l'entrée. Le premier couvre l'ouverture, le deuxième couvre au-dessus et en avant, les suivants couvrent l'arrière et les côtés. Quand chacun est prêt, le signal remonte de l'arrière vers l'avant par une pression sur l'épaule ou la cuisse. Quand le premier la reçoit, toute l'équipe est prête : l'entrée peut commencer.",
+    "k": [
+     "colonne",
+     "secteurs",
+     "pression sur l'épaule"
+    ]
+   },
+   {
+    "p": 1603,
+    "t": "Le couloir est un endroit dangereux : on y est canalisé et on n'a pas d'abri. Dans un couloir étroit, l'équipe avance en colonne, les deux premiers prêts à tirer, l'un un peu en retrait de l'autre. À une intersection en T, deux équipiers sortent en même temps, chacun d'un côté, pour contrôler les deux branches d'un coup. On ne reste jamais arrêté dans l'axe d'un couloir, là où un seul tireur peut viser toute l'équipe.",
+    "k": [
+     "canalisé",
+     "en T : deux côtés",
+     "pas dans l'axe"
+    ]
+   },
+   {
+    "p": 1604,
+    "t": "Les escaliers sont parmi les endroits les plus dangereux d'un bâtiment : l'ennemi peut être au-dessus, en dessous ou dans le palier. En montant, un équipier couvre le haut de l'escalier, un autre couvre l'espace entre les rampes, et la progression se fait de profil, le dos ou l'épaule contre le mur. On ne s'arrête jamais au milieu. Le palier est contrôlé comme une pièce. Quand c'est possible, on nettoie un bâtiment par le haut.",
+    "k": [
+     "haut et bas",
+     "de profil",
+     "par le haut"
+    ]
+   },
+   {
+    "p": 1605,
+    "t": "Dans un bâtiment, parler fort trahit sa position. L'équipe communique par signes : le poing levé signifie halte, la main à plat vers le sol signifie à terre, l'index tendu vers un point désigne une direction, la main sur la tête appelle au regroupement. Ces signes sont simples, connus de tous et répétés à l'entraînement. Quand le silence n'est plus nécessaire, on annonce à voix haute et clairement.",
+    "k": [
+     "silence",
+     "poing levé = halte",
+     "réflexe"
+    ]
+   },
+   {
+    "p": 1606,
+    "t": "Dans un grand bâtiment, on peut vite se perdre. Chaque pièce contrôlée est marquée à l'entrée, avec un signe convenu : craie, ruban, bâton lumineux la nuit. Ainsi, les équipes qui suivent savent ce qui est déjà nettoyé, on ne perd pas de temps à recommencer et on n'oublie aucune pièce. Le code est le même pour toute l'unité et il est expliqué avant l'action.",
+    "k": [
+     "marque",
+     "rien d'oublié",
+     "code commun"
+    ]
+   },
+   {
+    "p": 1607,
+    "t": "En ville, le combat se déroule au milieu de la population. Avant chaque tir, il faut identifier : on regarde les mains et le comportement de la personne. Un civil trouvé dans une pièce est contrôlé, mis à l'écart du danger, regroupé avec les autres et gardé sous surveillance. On reste vigilant : une personne qui semble inoffensive peut cacher une arme. Le respect du droit au combat s'applique aussi dans les bâtiments.",
+    "k": [
+     "identifier",
+     "les mains",
+     "regrouper"
+    ]
+   },
+   {
+    "p": 1608,
+    "t": "Une fois le bâtiment contrôlé, l'équipe se regroupe au point prévu et se réorganise. Chacun annonce son état : blessé ou non, combien de munitions, quel matériel manque. On redistribue les chargeurs, on soigne les blessés, on surveille toutes les directions pendant ce temps. Le chef rend compte à l'échelon supérieur. Puis l'équipe est prête pour la mission suivante. Une unité qui ne se réorganise pas s'épuise vite.",
+    "k": [
+     "regroupement",
+     "bilan",
+     "compte rendu"
+    ]
    }
   ],
   "quiz": [
@@ -4513,6 +5040,61 @@ window.COURSE = [
     ],
     "a": 1,
     "e": "Les habitudes rendent la patrouille prévisible : on change d'itinéraire et d'horaire."
+   },
+   {
+    "q": "Comment passer devant une fenêtre ?",
+    "o": [
+     "Debout en courant",
+     "En se baissant sous l'appui, collé au mur",
+     "En s'arrêtant devant pour regarder",
+     "En tirant à travers"
+    ],
+    "a": 1,
+    "e": "On ne passe jamais debout devant une ouverture."
+   },
+   {
+    "q": "Dans la colonne d'assaut, d'où part le signal « prêt » ?",
+    "o": [
+     "Du premier",
+     "Du dernier, de l'arrière vers l'avant",
+     "Du chef par radio",
+     "De personne"
+    ],
+    "a": 1,
+    "e": "Quand le premier reçoit la pression, toute l'équipe est prête."
+   },
+   {
+    "q": "Pourquoi marquer les pièces contrôlées ?",
+    "o": [
+     "Pour décorer",
+     "Pour ne rien oublier et ne pas nettoyer deux fois",
+     "Pour indiquer la sortie aux civils",
+     "Ce n'est pas utile"
+    ],
+    "a": 1,
+    "e": "Les équipes suivantes savent ce qui est déjà contrôlé."
+   },
+   {
+    "q": "Que regarde-t-on d'abord sur une personne trouvée dans une pièce ?",
+    "o": [
+     "Ses chaussures",
+     "Ses mains",
+     "Ses cheveux",
+     "Son sac"
+    ],
+    "a": 1,
+    "e": "Les mains montrent s'il y a une arme."
+   },
+   {
+    "q": "Pourquoi nettoyer un bâtiment par le haut quand c'est possible ?",
+    "o": [
+     "C'est plus rapide de descendre",
+     "L'escalier est moins dangereux en descendant et l'ennemi est poussé vers le bas",
+     "On voit mieux",
+     "C'est la tradition"
+    ],
+    "a": 1,
+    "e": "On repousse l'ennemi vers le bas, où il peut être intercepté."
    }
   ]
  },
@@ -4611,6 +5193,78 @@ window.COURSE = [
      "champ de vision + repli",
      "fond de la pièce",
      "carnet de portée"
+    ]
+   },
+   {
+    "p": 1301,
+    "t": "Nouvelles fiches d'après le manuel de tir de précision des Marines américains. Le tireur d'élite ne travaille jamais seul. Dans le binôme, l'observateur est souvent le plus expérimenté : c'est lui qui cherche les cibles, estime les distances, lit le vent et annonce les corrections. Le tireur se concentre sur son tir. Pour garder les yeux reposés, ils échangent les rôles d'observation toutes les vingt à trente minutes.",
+    "k": [
+     "binôme",
+     "l'observateur dirige",
+     "relève 20-30 min"
+    ]
+   },
+   {
+    "p": 1302,
+    "t": "Le jeu de Kim vient d'un roman de Kipling. On place quelques objets sur une table, on les observe pendant une minute, puis on les cache. Il faut ensuite les décrire de mémoire : leur nombre, leur forme, leur couleur, leur position. Le tireur d'élite y joue souvent, avec de plus en plus d'objets et de moins en moins de temps. Cela développe la mémoire et le sens du détail, indispensables pour faire un compte rendu précis.",
+    "k": [
+     "Kim",
+     "de mémoire",
+     "détails"
+    ]
+   },
+   {
+    "p": 1303,
+    "t": "Pour ne rien oublier, on divise le terrain en bandes : proche, moyenne et lointaine. On commence par un balayage rapide de tout le secteur, pour repérer un danger immédiat. Puis on fouille chaque bande en détail, de gauche à droite, en se chevauchant. On cherche ce qui n'est pas naturel : une ligne droite, une forme humaine, un reflet, une couleur qui ne colle pas, un mouvement. Le tireur note tout dans son carnet.",
+    "k": [
+     "bandes",
+     "balayage puis détail",
+     "ce qui n'est pas naturel"
+    ]
+   },
+   {
+    "p": 1304,
+    "t": "Le tireur d'élite est aussi un capteur de renseignement. Il tient un carnet d'observation : heure, lieu, ce qu'il a vu, combien, quelle activité, quel équipement. Il dessine un croquis panoramique du terrain avec les points de repère, les distances et les zones d'intérêt. Ces informations remontent rapidement au chef par radio, sous forme de comptes rendus courts et précis. Une bonne observation vaut souvent plus qu'un tir.",
+    "k": [
+     "carnet",
+     "croquis",
+     "comptes rendus"
+    ]
+   },
+   {
+    "p": 1305,
+    "t": "Le tireur d'élite fabrique souvent sa tenue de camouflage, couverte de filets et de bandes de tissu. On y ajoute de la végétation prise sur place, pour avoir exactement les couleurs du terrain. Le visage et les mains sont camouflés avec du maquillage : zones claires assombries, zones sombres éclaircies. Quand on change de zone, on change la végétation : une herbe sèche sur une tenue au milieu de l'herbe verte attire l'œil.",
+    "k": [
+     "casser la silhouette",
+     "végétation locale",
+     "visage et mains"
+    ]
+   },
+   {
+    "p": 1306,
+    "t": "L'approche, ou stalk, consiste à se rapprocher d'un point d'observation sans être vu. On avance très lentement, en profitant de chaque couvert : creux, haies, ombres. Quand le terrain est découvert, on rampe bas, parfois pendant des heures. On évite les lignes de crête, qui découpent la silhouette sur le ciel. Au moindre bruit ou mouvement suspect, on s'arrête et on attend. La patience est la première qualité du tireur d'élite.",
+    "k": [
+     "lentement",
+     "ramper",
+     "patience"
+    ]
+   },
+   {
+    "p": 1307,
+    "t": "Le poste, ou cache, doit offrir un large champ de vision sur la zone, tout en protégeant le dos du tireur. On ne s'installe jamais près d'un repère évident comme un arbre isolé, une maison ou un sommet : c'est là que l'ennemi regarde en premier. On reste en retrait de l'ouverture, dans l'ombre. Avant de s'installer, on prévoit toujours un itinéraire de repli, différent du chemin d'arrivée.",
+    "k": [
+     "champ de vision",
+     "pas près d'un repère",
+     "repli"
+    ]
+   },
+   {
+    "p": 1308,
+    "t": "Le métier de tireur d'élite est fait de longues heures d'immobilité. Aucun mouvement inutile, aucun bruit, aucun reflet. On mange et on boit couché, on garde ses déchets : rien ne doit rester derrière soi qui trahisse son passage. Le froid, la chaleur, les insectes et la fatigue mettent l'esprit à rude épreuve. C'est l'endurance mentale, plus que l'adresse au tir, qui fait un bon tireur d'élite.",
+    "k": [
+     "immobilité",
+     "aucune trace",
+     "endurance mentale"
     ]
    }
   ],
@@ -4724,6 +5378,50 @@ window.COURSE = [
     ],
     "a": 1,
     "e": "Au fond de la pièce, le canon ne dépasse pas : on ne le voit pas."
+   },
+   {
+    "q": "Dans le binôme, qui annonce les corrections ?",
+    "o": [
+     "Le tireur",
+     "L'observateur",
+     "Le chef de section",
+     "Personne"
+    ],
+    "a": 1,
+    "e": "L'observateur lit le vent et annonce les corrections."
+   },
+   {
+    "q": "À quoi sert le jeu de Kim ?",
+    "o": [
+     "À tirer plus vite",
+     "À entraîner la mémoire et le sens du détail",
+     "À choisir un poste",
+     "À régler la lunette"
+    ],
+    "a": 1,
+    "e": "On mémorise des objets, puis on les décrit."
+   },
+   {
+    "q": "Où ne faut-il pas installer son poste ?",
+    "o": [
+     "Dans l'ombre",
+     "En retrait d'une ouverture",
+     "Près d'un repère évident, comme un arbre isolé",
+     "Avec un itinéraire de repli"
+    ],
+    "a": 2,
+    "e": "L'ennemi regarde d'abord les repères évidents."
+   },
+   {
+    "q": "Que faire quand on change de zone avec sa tenue camouflée ?",
+    "o": [
+     "Rien",
+     "Changer la végétation pour celle du nouveau terrain",
+     "Enlever tout le camouflage",
+     "Ajouter des couleurs vives"
+    ],
+    "a": 1,
+    "e": "Une végétation qui ne colle pas au terrain attire l'œil."
    }
   ]
  },
@@ -9050,5 +9748,258 @@ window.COURSE = [
    }
   ],
   "quiz": []
+ },
+ {
+  "id": "genie",
+  "n": 28,
+  "title": "Instruction du génie",
+  "fr": "Mémento du sapeur : missions, Tirfor, franchissement, obstacles, engins piégés, radio",
+  "pages": "Fiches 1 à 13 · 11 questions",
+  "paid": true,
+  "pid": "genie",
+  "price": "2,00 €",
+  "adEvery": 10,
+  "lesson": [
+   {
+    "p": 1701,
+    "t": "Nouveau chapitre : l'instruction du génie, d'après un mémento du sapeur. Le génie est l'arme des sapeurs : des soldats qui combattent comme les fantassins, mais qui savent aussi construire, franchir, dégager, protéger. Sa devise résume le métier : « Parfois détruire, souvent construire, toujours servir ». Les sapeurs fêtent sainte Barbe, leur patronne, le 4 décembre, et la fête d'arme du génie, Dantzig, le 26 mai.",
+    "k": [
+     "sapeur",
+     "construire et combattre",
+     "Sainte-Barbe"
+    ]
+   },
+   {
+    "p": 1702,
+    "t": "Chaque groupe de combat du génie dispose d'un lot d'outils : pelles, pioches, scies, haches, barres à mine, cordages. Il utilise aussi des petits moteurs : tronçonneuse, groupe électrogène, motopompe, découpeuse. Le sapeur apprend à les utiliser en sécurité, avec gants, lunettes et protections auditives, et à les entretenir chaque jour : nettoyage, carburant, vérification. En opération, un outil en panne peut bloquer toute une unité.",
+    "k": [
+     "lot d'outils",
+     "petits moteurs",
+     "entretien"
+    ]
+   },
+   {
+    "p": 1703,
+    "t": "Le génie de combat a trois grandes missions. L'appui à la mobilité : permettre aux unités amies d'avancer, en ouvrant les itinéraires, en franchissant les rivières et les obstacles. La contre-mobilité : ralentir ou bloquer l'ennemi avec des obstacles. L'aide au déploiement : construire des abris, des camps et des protections, produire de l'eau et de l'électricité. Le sapeur est à la fois combattant et bâtisseur.",
+    "k": [
+     "mobilité",
+     "contre-mobilité",
+     "déploiement"
+    ]
+   },
+   {
+    "p": 1704,
+    "t": "Le Tirfor est un appareil manuel de levage et de traction par câble. Il remplace un treuil ou un palan dans beaucoup de situations : dégager un véhicule embourbé, déplacer une charge lourde, tendre un câble, monter une charpente. Il peut tirer environ deux tonnes et demie à l'horizontale. Il lui faut un point d'ancrage solide : un gros arbre, ou à défaut des piquets plantés en ligne, en V ou en Y et reliés par une chaîne.",
+    "k": [
+     "traction",
+     "2,5 tonnes",
+     "ancrage"
+    ]
+   },
+   {
+    "p": 1705,
+    "t": "Les rivières, les ravins et les canaux sont des coupures que le génie doit franchir. Selon la largeur et le courant, on utilise un gué, une passerelle légère ou des embarcations pneumatiques. Avant tout franchissement, on reconnaît les rives, la profondeur et la force du courant, et on place une équipe de sécurité. Sur l'eau, chacun porte un gilet de sauvetage, côté orange visible de jour comme de nuit.",
+    "k": [
+     "coupure",
+     "reconnaître",
+     "gilet orange"
+    ]
+   },
+   {
+    "p": 1706,
+    "t": "Un obstacle sert à canaliser, ralentir ou arrêter l'ennemi. Pour être efficace, il doit respecter quatre critères : être difficile à contourner, être battu par les feux, c'est-à-dire surveillé et sous le tir de nos armes, être découvert le plus tard possible par l'ennemi, et être renforcé. Un exemple simple est l'abattis : des arbres abattus et entrecroisés en travers d'une route, la cime tournée vers l'ennemi.",
+    "k": [
+     "4 critères",
+     "battu par les feux",
+     "abattis"
+    ]
+   },
+   {
+    "p": 1707,
+    "t": "Un IED, ou engin explosif improvisé, est un piège explosif fabriqué et posé par l'adversaire. C'est l'arme qui a fait le plus de victimes chez les soldats occidentaux en Afghanistan et au Sahel. La lutte contre les IED est une spécialité du génie. Pour tout soldat, la règle de base est simple : apprendre à reconnaître les endroits et les signes suspects, et ne jamais toucher un objet suspect. La neutralisation est l'affaire de spécialistes.",
+    "k": [
+     "IED",
+     "repérer",
+     "ne pas toucher"
+    ]
+   },
+   {
+    "p": 1708,
+    "t": "L'adversaire pose ses engins là où il est sûr que vous passerez, et là où c'est facile et discret pour lui. Les zones à risque sont donc les passages obligés comme les ponts, les tunnels et les gués, les endroits où l'on ralentit comme les carrefours, les déviations ou les travaux, les terrains faciles à creuser, et surtout les lieux où les troupes passent régulièrement. Ne jamais prendre de routine est la première protection.",
+    "k": [
+     "passages obligés",
+     "ralentissements",
+     "pas de routine"
+    ]
+   },
+   {
+    "p": 1709,
+    "t": "Il faut chercher ce qui n'est pas normal : de la terre fraîchement remuée, un objet abandonné qui n'a rien à faire là, un fil, une antenne, des pierres empilées ou des marques qui pourraient servir de repère à l'adversaire. Le comportement de la population est aussi un indice : une rue habituellement animée qui se vide, des enfants qui ne jouent plus dehors, des gens qui s'éloignent à votre passage. Tout indice doit être signalé.",
+    "k": [
+     "anormal",
+     "fil, antenne",
+     "population"
+    ]
+   },
+   {
+    "p": 1710,
+    "t": "Devant un objet suspect, la conduite à tenir est toujours la même. On s'arrête : on ne touche à rien et on ne s'approche pas. On prévient ses camarades et on s'éloigne en reprenant le chemin par lequel on est venu, en mettant tout le monde à l'abri, civils compris. On rend compte en donnant la position exacte et la description. On boucle la zone à bonne distance, en surveillant les alentours : un second piège peut viser ceux qui arrivent. Les spécialistes font le reste.",
+    "k": [
+     "ne pas toucher",
+     "s'éloigner",
+     "boucler"
+    ]
+   },
+   {
+    "p": 1711,
+    "t": "À la radio, les lettres se confondent facilement. On utilise donc l'alphabet phonétique international, commun à toutes les armées de l'OTAN : Alpha, Bravo, Charlie, Delta, Echo, Foxtrot, Golf, Hotel, India, Juliett, Kilo, Lima, Mike, November, Oscar, Papa, Québec, Romeo, Sierra, Tango, Uniform, Victor, Whiskey, X-ray, Yankee, Zoulou. Il sert à épeler les noms, les indicatifs et les coordonnées.",
+    "k": [
+     "alphabet OTAN",
+     "épeler",
+     "sans confusion"
+    ]
+   },
+   {
+    "p": 1712,
+    "t": "La radio est partagée par toute l'unité : on y parle peu et bien. Avant d'appuyer sur l'alternat, on prépare son message. On appelle en donnant l'indicatif de celui qu'on appelle, puis le sien : « Bravo un de Alpha deux, parlez ». On parle lentement et clairement. On termine par « parlez » quand on attend une réponse, ou « terminé » quand l'échange est fini. Celui qui reçoit répond « reçu ». Et on n'oublie pas que l'ennemi peut écouter.",
+    "k": [
+     "court",
+     "indicatifs",
+     "parlez, terminé"
+    ]
+   },
+   {
+    "p": 1713,
+    "t": "Les jumelles militaires ont un réticule gradué en millièmes. Un millième correspond à un écart d'un mètre vu à mille mètres. Cela permet de mesurer un écart entre deux points, de corriger un tir, ou d'estimer une distance si l'on connaît la taille d'un objet. Par exemple, un véhicule de cinq mètres de long qui mesure cinq millièmes dans les jumelles est à environ mille mètres. Les spécialistes utilisent aussi des optiques de nuit et thermiques.",
+    "k": [
+     "réticule",
+     "1 m à 1 000 m",
+     "estimer"
+    ]
+   }
+  ],
+  "quiz": [
+   {
+    "q": "Quelle est la devise du génie ?",
+    "o": [
+     "Honneur et Fidélité",
+     "Parfois détruire, souvent construire, toujours servir",
+     "Rien n'empêche",
+     "Être et durer"
+    ],
+    "a": 1,
+    "e": "Elle résume le métier de sapeur : combattre, construire et servir."
+   },
+   {
+    "q": "Quel équipement de sécurité utilise-t-on avec une tronçonneuse ?",
+    "o": [
+     "Aucun",
+     "Gants, lunettes et protections auditives",
+     "Un gilet de sauvetage",
+     "Un casque radio"
+    ],
+    "a": 1,
+    "e": "Les petits moteurs sont dangereux sans protections."
+   },
+   {
+    "q": "Quand fête-t-on la Sainte-Barbe ?",
+    "o": [
+     "Le 30 avril",
+     "Le 4 décembre",
+     "Le 26 mai",
+     "Le 14 juillet"
+    ],
+    "a": 1,
+    "e": "Sainte Barbe est la patronne des sapeurs, fêtée le 4 décembre."
+   },
+   {
+    "q": "Que signifie « contre-mobilité » ?",
+    "o": [
+     "Ouvrir la route aux unités amies",
+     "Ralentir ou bloquer l'ennemi",
+     "Réparer les véhicules",
+     "Transporter les troupes"
+    ],
+    "a": 1,
+    "e": "Les obstacles servent à freiner l'ennemi."
+   },
+   {
+    "q": "Quel critère ne fait pas partie d'un bon obstacle ?",
+    "o": [
+     "Difficile à contourner",
+     "Battu par les feux",
+     "Découvert le plus tard possible",
+     "Visible de très loin"
+    ],
+    "a": 3,
+    "e": "Un obstacle doit être découvert le plus tard possible."
+   },
+   {
+    "q": "À quoi sert le Tirfor ?",
+    "o": [
+     "À creuser",
+     "À lever et tirer des charges avec un câble",
+     "À communiquer",
+     "À détecter des métaux"
+    ],
+    "a": 1,
+    "e": "C'est un appareil manuel de levage et de traction."
+   },
+   {
+    "q": "Devant un objet suspect, que faire en premier ?",
+    "o": [
+     "Le ramasser pour le montrer",
+     "Ne pas toucher, s'éloigner et rendre compte",
+     "Le photographier de très près",
+     "Le pousser du pied"
+    ],
+    "a": 1,
+    "e": "Ne jamais toucher : on s'éloigne, on rend compte et on boucle la zone."
+   },
+   {
+    "q": "Quel endroit est une zone à risque pour les engins piégés ?",
+    "o": [
+     "Un pont ou un gué emprunté souvent",
+     "Le milieu d'un grand champ jamais utilisé",
+     "Le ciel",
+     "La caserne fermée"
+    ],
+    "a": 0,
+    "e": "L'adversaire choisit les passages obligés et les habitudes."
+   },
+   {
+    "q": "Quel comportement de la population peut être un indice ?",
+    "o": [
+     "Une rue animée",
+     "Une rue qui se vide soudainement",
+     "Des marchands qui vendent",
+     "Des enfants qui jouent"
+    ],
+    "a": 1,
+    "e": "Une population qui s'éloigne peut savoir quelque chose."
+   },
+   {
+    "q": "Comment dit-on la lettre « D » à la radio ?",
+    "o": [
+     "David",
+     "Delta",
+     "Dakar",
+     "Dino"
+    ],
+    "a": 1,
+    "e": "Alphabet OTAN : Alpha, Bravo, Charlie, Delta."
+   },
+   {
+    "q": "Un millième dans les jumelles correspond à…",
+    "o": [
+     "1 mètre à 100 mètres",
+     "1 mètre à 1 000 mètres",
+     "1 centimètre à 1 mètre",
+     "10 mètres à 1 000 mètres"
+    ],
+    "a": 1,
+    "e": "C'est la base pour mesurer des écarts et estimer des distances."
+   }
+  ]
  }
 ];
