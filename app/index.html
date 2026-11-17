@@ -188,6 +188,7 @@ body.lipjs .instr.talking .mth{animation:none}
 .crumb h2{font-family:var(--f-display);font-weight:400;font-size:clamp(22px,3.4vw,32px);margin:0;line-height:1.1;flex-basis:100%}
 .crumb .mode{font-family:var(--f-label);font-size:13px;letter-spacing:.16em;text-transform:uppercase;background:var(--panel-2);border:1px solid var(--line);padding:2px 8px;border-radius:3px;color:var(--brass)}
 .lesson{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:22px;align-items:start}
+.lesson.noimg{grid-template-columns:minmax(0,760px);justify-content:center}.lesson.noimg figure.page{display:none}.lesson.noimg .bubble{font-size:1.08em;line-height:1.6}
 .page{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px;position:relative}
 .page img{display:block;width:100%;height:auto;border-radius:4px;cursor:zoom-in;background:#0c0e09;min-height:200px}
 .page .cap{display:flex;justify-content:space-between;gap:8px;font-family:var(--f-label);font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:8px 2px 0}
@@ -206,6 +207,7 @@ body.lipjs .instr.talking .mth{animation:none}
 
 @media (max-width:900px){
   .lesson{grid-template-columns:minmax(0,1fr)}
+  .lesson.noimg .stage{max-width:none}
   .stage{position:static;order:-1;flex-direction:row;align-items:flex-end;gap:10px;height:auto;min-height:0}
   .stage .bubble{flex:1;min-width:0;font-size:16px;align-self:center}
   .stage .bubble::after{left:auto;right:-9px;bottom:auto;top:40%}
@@ -902,7 +904,7 @@ function home(){
   <div class="wrap">
     <section class="hero">
       <div>
-        <div class="eyebrow">Légion étrangère · cours complet du manuel <span style="opacity:.55">· version 59</span></div>
+        <div class="eyebrow">Légion étrangère · cours complet du manuel <span style="opacity:.55">· version 60</span></div>
         <h1>Apprenez.<br>Puis <em>prouvez-le.</em></h1>
         <div class="bubble fade-in"><div class="who"><span class="dot"></span>Instructeur</div><span id="greet">${esc(greet)}</span></div>
         <div class="row" style="margin-top:16px">
@@ -1030,7 +1032,7 @@ function lesson(c, i){
       <button class="btn" id="next"></button>
     </div></nav>`;
     document.getElementById('bk').onclick = home;
-    if (!c.flang) document.getElementById('pgwrap').onclick = () => { revealAll(); lightbox(pimg(state.c.lesson[state.i].p), 'Page du manuel'); };
+    if (!c.flang) document.getElementById('pgwrap').onclick = () => { if (!state.c.lesson[state.i].p) return; revealAll(); lightbox(pimg(state.c.lesson[state.i].p), 'Page du manuel'); };
     document.getElementById('prev').onclick = () => { if (state.i > 0) lesson(c, state.i - 1); };
     document.getElementById('next').onclick = () => {
       if (state.i < c.lesson.length - 1) lesson(c, state.i + 1);
@@ -1039,7 +1041,8 @@ function lesson(c, i){
     document.getElementById('replay').onclick = () => { const sl = c.lesson[state.i]; revealStart(sl.p); speak(sl.t, null, revealAll, revealStep); };
   }
   if (c.flang) frCard(s, i);
-  const pg = document.getElementById('pg');
+  const lsn = app.querySelector('.lesson'); if (lsn) lsn.classList.toggle('noimg', !c.flang && !s.p);
+  const pg = s.p ? document.getElementById('pg') : null;
   if (pg) { pg.src = pimg(s.p); pg.alt = 'Page ' + s.p + ' du manuel'; }
   if (pg) document.getElementById('pgCap').textContent = s.p > 1700 && s.p < 1800 ? 'Génie · fiche ' + (s.p - 1700) : s.p > 1200 ? 'Fiche illustrée' : s.p > 1100 ? 'Close-combat · fiche ' + (s.p - 1100) : s.p > 1000 ? 'Combat à mains nues · fiche ' + (s.p - 1000) : s.p > 900 ? 'Raisonnement numérique · fiche ' + (s.p - 900) : s.p > 800 ? 'Raisonnement spatial · fiche ' + (s.p - 800) : s.p > 700 ? 'Fiche tireur d\'élite · ' + (s.p - 700) : s.p > 600 ? 'Fiche CQB · ' + (s.p - 600) : s.p > 500 ? 'Fiche topographie · ' + (s.p - 500) : s.p > 400 ? 'Fiche tactique · ' + (s.p - 400) : s.p > 300 ? 'Fiche drones · ' + (s.p - 300) : 'Manuel · page ' + s.p;
   const say = document.getElementById('say');
@@ -1061,7 +1064,7 @@ function lesson(c, i){
   document.getElementById('prev').disabled = i === 0;
   document.getElementById('next').innerHTML = last ? (c.quiz.length ? 'Au quiz ▶' : 'Terminer ✓') : 'Suivant ▶';
   // preload next image
-  if (L[i+1] && !c.flang) { const im = new Image(); im.src = pimg(L[i+1].p); }
+  if (L[i+1] && !c.flang && L[i+1].p) { const im = new Image(); im.src = pimg(L[i+1].p); }
   revealStart(s.p);
   speak(s.t, null, revealAll, revealStep);
   if (window.innerWidth <= 900) top();
@@ -2282,7 +2285,7 @@ async function deleteAccount(){
    Chaque appareil reçoit un code aléatoire (aucun nom, aucune e-mail). On envoie seulement :
    première et dernière ouverture, langue, plateforme, version, nombre d'ouvertures, de leçons, de quiz et de jeux. */
 const IS_NATIVE = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
-const APP_VER = "59";
+const APP_VER = "60";
 const STATS = (() => {
   const id = (() => { let v = store._sid; if (!v || !/^[a-z0-9]{20,40}$/.test(v)) { v = Array.from(crypto.getRandomValues(new Uint8Array(16)), b => (b % 36).toString(36)).join('') + Date.now().toString(36); store._sid = v; save(); } return v; })();
   const c = store._st || (store._st = { visits: 0, lessons: 0, quizzes: 0, games: 0, first: new Date().toISOString(), lastGame: null });

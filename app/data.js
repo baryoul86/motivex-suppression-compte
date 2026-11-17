@@ -5266,6 +5266,214 @@ window.COURSE = [
      "aucune trace",
      "endurance mentale"
     ]
+   },
+   {
+    "t": "Nouvelle partie : le dossier de formation du tireur de précision. Il rassemble les connaissances de terrain qui entourent cette spécialité : sciences, observation, météo, cartes, survie, premiers secours, transmissions et préparation. C'est un document d'étude personnel : il ne remplace ni une formation encadrée, ni les règlements, ni les procédures officielles.",
+    "k": [
+     "dossier d'étude personnel",
+     "connaissances de terrain",
+     "ne remplace pas la formation"
+    ]
+   },
+   {
+    "t": "Le tireur de précision est un militaire spécialisé. Son rôle ne se limite pas à la précision technique. Il lui faut une excellente condition physique, une grande concentration, une discipline constante, et il doit comprendre la nature et les situations du terrain. Sa formation réunit plusieurs domaines : sciences, lecture du terrain, orientation, météo, transmissions, premiers secours et travail en équipe.",
+    "k": [
+     "bien plus que la précision",
+     "concentration et discipline",
+     "travail en équipe"
+    ]
+   },
+   {
+    "t": "Chapitre 1, le profil. Le tireur de précision est formé à l'observation, à l'analyse et à l'usage maîtrisé de son équipement. Ses compétences : une excellente observation, une concentration prolongée, une stabilité émotionnelle, la connaissance du terrain, une bonne condition physique, l'adaptation à la météo, une communication claire et un sens élevé des responsabilités.",
+    "k": [
+     "observation",
+     "stabilité émotionnelle",
+     "sens des responsabilités"
+    ]
+   },
+   {
+    "t": "Ses qualités personnelles : patience, rigueur, discrétion, maîtrise de soi et capacité à prendre du recul. Un militaire spécialisé connaît les limites de ses compétences. Il respecte les procédures de sécurité et agit toujours dans le cadre des règles et des ordres légitimes.",
+    "k": [
+     "patience et rigueur",
+     "connaître ses limites",
+     "ordres légitimes"
+    ]
+   },
+   {
+    "t": "Chapitre 2, la balistique. C'est la science qui étudie le mouvement d'un projectile. Elle a trois domaines. La balistique intérieure : ce qui se passe dans l'arme jusqu'à la sortie, avec la pression des gaz, la température et la combustion de la poudre. La balistique extérieure : le trajet dans l'air, avec la gravité, la résistance de l'air, la température, la pression et l'humidité. La balistique terminale : ce qui se passe quand le projectile rencontre une matière.",
+    "k": [
+     "balistique intérieure",
+     "balistique extérieure",
+     "balistique terminale"
+    ]
+   },
+   {
+    "t": "Quelques notions de physique. La gravité attire les objets vers le centre de la Terre. La résistance de l'air s'oppose au déplacement. La vitesse transsonique, c'est quand la compressibilité de l'air devient importante. La dérive gyroscopique vient de la rotation du projectile. L'effet de Coriolis est lié à la rotation de la Terre. Ces notions sont données ici pour comprendre la science, pas pour conduire un tir.",
+    "k": [
+     "gravité",
+     "résistance de l'air",
+     "Coriolis"
+    ]
+   },
+   {
+    "t": "Chapitre 3, la météo. Elle compte pour la préparation et la sécurité : elle change la visibilité, les déplacements, les communications et l'état physique. Les paramètres à suivre : la température, la pression, l'humidité, le vent, les précipitations, les nuages, la visibilité et le risque d'orage.",
+    "k": [
+     "visibilité",
+     "pression et humidité",
+     "risque d'orage"
+    ]
+   },
+   {
+    "t": "Le vent est un déplacement horizontal de l'air, causé par des différences de pression. On mesure sa vitesse avec un anémomètre et sa direction avec une girouette. Il faut distinguer le vent moyen, les rafales et les variations locales. Les dangers météo : hypothermie, coup de chaleur, déshydratation, foudre, vents violents, brouillard et fortes pluies. Pour s'en protéger : consulter les prévisions, adapter l'équipement, garder des réserves, et arrêter l'activité si cela devient dangereux.",
+    "k": [
+     "anémomètre et girouette",
+     "vent moyen et rafales",
+     "arrêter si c'est dangereux"
+    ]
+   },
+   {
+    "t": "Chapitre 4, l'observation. Observer, c'est recueillir des informations avec méthode. Il faut de la concentration, de la patience, et savoir séparer les faits des interprétations. On observe le terrain, la végétation, le relief, les routes, les constructions, la météo, les changements visibles et tout ce qui peut présenter un danger.",
+    "k": [
+     "observer avec méthode",
+     "faits et interprétations",
+     "changements visibles"
+    ]
+   },
+   {
+    "t": "Dans un compte rendu, on sépare quatre choses : ce qu'on a vu soi-même, ce qu'une autre personne a rapporté, les hypothèses, et ce qui reste à confirmer. Une bonne observation est claire, objective et vérifiable. Séparer les faits des hypothèses évite les erreurs d'analyse.",
+    "k": [
+     "vu soi-même",
+     "rapporté par un autre",
+     "à confirmer"
+    ]
+   },
+   {
+    "t": "Chapitre 5, les véhicules et matériels. On les classe en grandes catégories : transport de personnel ou de matériel, reconnaissance, soutien, c'est-à-dire logistique, maintenance et ravitaillement, véhicules blindés, et chars de combat. Pour les reconnaître, on regarde la silhouette, les roues ou les chenilles, la forme de la caisse, la tourelle, les équipements visibles et les marquages.",
+    "k": [
+     "transport, reconnaissance, soutien",
+     "roues ou chenilles",
+     "tourelle"
+    ]
+   },
+   {
+    "t": "Attention : une seule photo ou une seule observation ne suffit pas toujours pour identifier un matériel avec certitude, car plusieurs se ressemblent. On signale ses doutes, et on ne présente jamais une supposition comme un fait.",
+    "k": [
+     "rester prudent",
+     "signaler ses doutes",
+     "supposition ≠ fait"
+    ]
+   },
+   {
+    "t": "Chapitre 6, la topographie. Elle étudie les formes du terrain et permet de le représenter sur une carte. Les bases : l'échelle, les courbes de niveau, l'altitude, les coordonnées, le relief et la pente, l'orientation, la légende et les symboles. Les instruments : la boussole pour la direction par rapport au nord magnétique, le GPS pour la position, la carte topographique, et l'altimètre pour l'altitude.",
+    "k": [
+     "courbes de niveau",
+     "boussole et GPS",
+     "légende"
+    ]
+   },
+   {
+    "t": "Les outils numériques aident à consulter les cartes et à préparer le terrain. Les drones peuvent faire des relevés, dans le respect de la loi. Bonnes pratiques : vérifier la date et la source d'une carte, garder toujours un moyen d'orientation de secours, et protéger les appareils contre l'humidité, les chocs et les batteries vides.",
+    "k": [
+     "date et source de la carte",
+     "orientation de secours",
+     "batteries"
+    ]
+   },
+   {
+    "t": "Chapitre 7, la survie. Survivre, c'est garder ses fonctions vitales et rester en bon état dans un milieu difficile. Les besoins essentiels : se protéger de la météo, de l'eau potable, une alimentation adaptée, du repos, l'hygiène, la protection contre les blessures et une bonne température du corps. Attention à l'eau : la déshydratation fait chuter les capacités du corps et de l'esprit. Et une eau claire n'est pas forcément potable.",
+    "k": [
+     "besoins essentiels",
+     "eau potable",
+     "eau claire ≠ potable"
+    ]
+   },
+   {
+    "t": "Au froid : vêtements secs, extrémités protégées, et surveiller les signes d'hypothermie. À la chaleur : limiter l'exposition, boire régulièrement, reconnaître l'épuisement. L'équipement de base : trousse de secours, réserve d'eau, vêtements adaptés, lampe, moyen de communication, couverture de survie, carte, boussole et papiers d'identité. En cas de danger, on donne l'alerte et on revient vers un lieu sûr.",
+    "k": [
+     "froid et chaleur",
+     "équipement de base",
+     "alerter et revenir"
+    ]
+   },
+   {
+    "t": "Chapitre 8, les premiers secours. Le but : protéger la victime, éviter que son état s'aggrave, et faciliter l'arrivée des secours. Les étapes : vérifier que la zone est sûre, vérifier la conscience, vérifier la respiration, alerter, faire les gestes adaptés, puis surveiller la victime.",
+    "k": [
+     "zone sûre",
+     "conscience et respiration",
+     "alerter"
+    ]
+   },
+   {
+    "t": "Une hémorragie importante est une urgence : on applique les gestes appris en formation reconnue et on demande tout de suite une aide médicale. L'hypothermie, c'est une baisse dangereuse de la température du corps : tremblements, fatigue, confusion, mauvaise coordination. Ces gestes s'entretiennent avec une vraie formation, comme le PSC1 ou le SST. En France, appelez le 112 ou le 15. Et ne vous mettez jamais en danger pour aider.",
+    "k": [
+     "hémorragie = urgence",
+     "PSC1, SST",
+     "112 ou 15"
+    ]
+   },
+   {
+    "t": "Chapitre 9, les transmissions. Une bonne transmission est courte, claire, structurée et adaptée à la personne qui la reçoit. Les moyens : radio portative, téléphone, systèmes numériques, réseaux autorisés, signes visuels et procédures convenues. Un bon message est clair, concis, précis, vérifiable, compréhensible, et respecte la confidentialité.",
+    "k": [
+     "court et clair",
+     "réseaux autorisés",
+     "confidentialité"
+    ]
+   },
+   {
+    "t": "La discipline radio réduit les erreurs : on s'identifie, on s'assure que le message est bien compris, et on respecte les procédures. Sécurité de l'information : ne jamais envoyer de données personnelles, sensibles ou opérationnelles sur un réseau non autorisé, et toujours vérifier le destinataire avant d'envoyer.",
+    "k": [
+     "discipline radio",
+     "réseau non autorisé : jamais",
+     "vérifier le destinataire"
+    ]
+   },
+   {
+    "t": "Chapitre 10, le physique et le mental. La condition physique sert la sécurité, l'endurance et l'adaptation. Le programme doit être progressif et adapté à sa santé. On travaille l'endurance, la force, la mobilité, l'équilibre, la coordination et la résistance à l'effort. La préparation mentale améliore la concentration, la gestion du stress et les décisions réfléchies : régularité, maîtrise de ses émotions, confiance en soi, gestion de la fatigue et connaissance de ses limites.",
+    "k": [
+     "progressif",
+     "gestion du stress",
+     "connaître ses limites"
+    ]
+   },
+   {
+    "t": "En équipe, la cohésion repose sur la confiance, le respect, la communication et la responsabilité de chacun. Un bon équipier sait écouter, transmet les informations utiles et accepte les corrections. Et n'oubliez pas : le sommeil, l'eau, l'alimentation et les jours de repos font partie de la préparation.",
+    "k": [
+     "confiance et respect",
+     "accepter les corrections",
+     "récupération"
+    ]
+   },
+   {
+    "t": "Chapitre 11, l'éthique. Les compétences ne vont jamais sans la responsabilité. Tout militaire respecte le droit, les règles d'engagement, les procédures de sécurité et le droit international humanitaire. La discipline, ce n'est pas seulement obéir : c'est comprendre ses responsabilités, signaler les risques et respecter les limites légales.",
+    "k": [
+     "responsabilité",
+     "droit international humanitaire",
+     "signaler les risques"
+    ]
+   },
+   {
+    "t": "Les principes essentiels : respecter la dignité humaine, respecter le droit, éviter de nuire aux personnes, protéger les personnes hors de combat, signaler ce qui est dangereux ou irrégulier, garder la maîtrise de soi et le discernement. Être compétent, c'est aussi savoir reconnaître une limite et demander conseil.",
+    "k": [
+     "dignité humaine",
+     "personnes hors de combat",
+     "demander conseil"
+    ]
+   },
+   {
+    "t": "Chapitre 12, la méthode pour progresser. Il faut une méthode, des objectifs réalistes et une évaluation régulière. D'abord la théorie : lire les documents, comprendre le vocabulaire, vérifier auprès de sources fiables. Ensuite la pratique, toujours dans un cadre autorisé, avec un encadrement qualifié et les mesures de sécurité.",
+    "k": [
+     "objectifs réalistes",
+     "sources fiables",
+     "pratique encadrée"
+    ]
+   },
+   {
+    "t": "Faites régulièrement le point : ce que vous avez appris, vos difficultés, vos erreurs, ce qu'il faut améliorer et vos prochains objectifs. Notez-le sur une fiche de suivi : la date, le thème, les connaissances acquises, les points à améliorer et la prochaine étape. Les équipements et les procédures évoluent : la formation ne s'arrête jamais.",
+    "k": [
+     "fiche de suivi",
+     "points à améliorer",
+     "formation continue"
+    ]
    }
   ],
   "quiz": [
