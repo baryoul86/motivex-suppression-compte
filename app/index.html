@@ -902,7 +902,7 @@ function home(){
   <div class="wrap">
     <section class="hero">
       <div>
-        <div class="eyebrow">Légion étrangère · cours complet du manuel <span style="opacity:.55">· version 54</span></div>
+        <div class="eyebrow">Légion étrangère · cours complet du manuel <span style="opacity:.55">· version 55</span></div>
         <h1>Apprenez.<br>Puis <em>prouvez-le.</em></h1>
         <div class="bubble fade-in"><div class="who"><span class="dot"></span>Instructeur</div><span id="greet">${esc(greet)}</span></div>
         <div class="row" style="margin-top:16px">
@@ -2282,7 +2282,7 @@ async function deleteAccount(){
    Chaque appareil reçoit un code aléatoire (aucun nom, aucune e-mail). On envoie seulement :
    première et dernière ouverture, langue, plateforme, version, nombre d'ouvertures, de leçons, de quiz et de jeux. */
 const IS_NATIVE = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
-const APP_VER = "54";
+const APP_VER = "55";
 const STATS = (() => {
   const id = (() => { let v = store._sid; if (!v || !/^[a-z0-9]{20,40}$/.test(v)) { v = Array.from(crypto.getRandomValues(new Uint8Array(16)), b => (b % 36).toString(36)).join('') + Date.now().toString(36); store._sid = v; save(); } return v; })();
   const c = store._st || (store._st = { visits: 0, lessons: 0, quizzes: 0, games: 0, first: new Date().toISOString(), lastGame: null });
@@ -2320,7 +2320,28 @@ async function statsLoad(){
       q({ fieldFilter: { field: { fieldPath: 'lastGame' }, op: 'GREATER_THAN_OR_EQUAL', value: { timestampValue: new Date(Date.now() - 7 * 864e5).toISOString() } } }),
       q(eq('google', { booleanValue: true })), q(eq('plat', { stringValue: 'android' }))]);
     return { total: tot.n, online: online.n, today: today.n, d7: d7.n, d30: d30.n, play7: play7.n, google: goog.n, android: andr.n, visits: sums.visits || 0, lessons: sums.lessons || 0, quizzes: sums.quizzes || 0, games: sums.games || 0 };
-  } catch(e){ return { error: e }; }
+  } catch(e){
+    // Si le comptage côté serveur est refusé (index, quota…), on lit les fiches et on compte ici.
+    try { return await statsByList(tk, day); } catch(e2){ return { error: e2 || e }; }
+  }
+}
+async function statsByList(tk, day){
+  const now = Date.now(), t = v => v && v.timestampValue ? Date.parse(v.timestampValue) : 0, n = v => v ? +(v.integerValue ?? v.doubleValue ?? 0) : 0;
+  const s = { total: 0, online: 0, today: 0, d7: 0, d30: 0, play7: 0, google: 0, android: 0, visits: 0, lessons: 0, quizzes: 0, games: 0 };
+  let page = '', loops = 0;
+  do {
+    const r = await fetch(`${FB_DOCS}/devices?pageSize=300${page ? '&pageToken=' + encodeURIComponent(page) : ''}`, { headers: { Authorization: 'Bearer ' + tk } });
+    if (!r.ok) { let m = ''; try { m = ((await r.json()).error || {}).message || ''; } catch(_){} throw (r.status + (m ? ' : ' + m.slice(0, 120) : '')); }
+    const j = await r.json();
+    for (const d of (j.documents || [])) {
+      const f = d.fields || {}, last = t(f.last), lg = t(f.lastGame);
+      s.total++; if (last >= now - 5 * 60e3) s.online++; if (last >= day.getTime()) s.today++; if (last >= now - 7 * 864e5) s.d7++; if (last >= now - 30 * 864e5) s.d30++;
+      if (lg >= now - 7 * 864e5) s.play7++; if (f.google && f.google.booleanValue) s.google++; if (f.plat && f.plat.stringValue === 'android') s.android++;
+      s.visits += n(f.visits); s.lessons += n(f.lessons); s.quizzes += n(f.quizzes); s.games += n(f.games);
+    }
+    page = j.nextPageToken || '';
+  } while (page && ++loops < 40);
+  return s;
 }
 async function idToken(){ if (!FAUTH) return null; try { const r = await FAUTH.getIdToken({ forceRefresh: false }); return r && r.token; } catch(e){ return null; } }
 function evParse(d){ const f = d.fields || {}; const v = k => (f[k] && (f[k].stringValue || f[k].timestampValue)) || ''; return { id: d.name, title: v('title'), body: v('body'), at: v('createdAt') }; }
@@ -2357,7 +2378,7 @@ function adminView(){
     const box = document.getElementById('stBox'); if (!box) return; box.innerHTML = '<p class="muted">Chargement…</p>';
     const s = await statsLoad(); if (!document.getElementById('stBox')) return;
     if (!s) { box.innerHTML = '<p class="muted">Reconnectez-vous avec Google pour voir les statistiques.</p>'; return; }
-    if (s.error) { box.innerHTML = `<p class="muted">Statistiques indisponibles (${esc(String(s.error))}). Vérifiez les règles Firestore de la collection « devices ».</p>`; return; }
+    if (s.error) { box.innerHTML = `<p class="muted">Statistiques indisponibles (${esc(String(s.error))}). Touchez « Actualiser » ; si cela continue, déconnectez-vous puis reconnectez-vous avec Google.</p>`; return; }
     const T = [['🟢', 'En ligne maintenant', s.online], ['📅', "Actifs aujourd'hui", s.today], ['📈', 'Actifs 7 jours', s.d7], ['🗓️', 'Actifs 30 jours', s.d30],
       ['👥', 'Visiteurs au total', s.total], ['🎮', 'Joueurs (7 jours)', s.play7], ['🔐', 'Connectés Google', s.google], ['🤖', 'Sur Android', s.android],
       ['🚪', 'Ouvertures', s.visits], ['📚', 'Leçons suivies', s.lessons], ['📝', 'Quiz terminés', s.quizzes], ['🎯', 'Parties jouées', s.games]];
