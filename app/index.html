@@ -580,13 +580,6 @@ body[data-view="onboard"] .ask-fab,body[data-view="admin"] .ask-fab{display:none
 .ar-timer{height:8px;background:var(--panel-2);border-radius:4px;overflow:hidden;margin:6px 0 10px}
 .ar-timer i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--red),var(--green));transition:width .1s linear}
 .ar-opts{display:flex;flex-direction:column;gap:8px}
-.ms-box{position:relative;max-width:560px;margin:0 auto;border-radius:14px;overflow:hidden;border:1px solid var(--line);touch-action:manipulation;user-select:none;-webkit-user-select:none}
-.ms-box canvas{display:block;width:100%;height:auto;cursor:crosshair}
-.ms-ov{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(10,12,8,.6);padding:16px}
-.ms-card{background:#1c2016;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;max-width:340px}.ms-card h3{margin:0 0 8px}.ms-stars{font-size:34px;color:#ffd25a}
-.ms-ctl{display:flex;gap:6px;max-width:560px;margin:10px auto 0;flex-wrap:wrap}
-.ms-ctl button{flex:1 1 22%;min-width:72px;padding:12px 4px;border-radius:12px;border:1px solid var(--line);background:#23281c;color:inherit;font-weight:800;font-size:13px;letter-spacing:.03em}
-.ms-ctl .ms-st.on{background:#3b6e33;border-color:#6fae5f}.ms-ctl .ms-rl{background:#3a2a18}
 .card.arcard{border-color:#7a2a22;background:linear-gradient(135deg,#2c1512,#1c2016)}
 .frcard{background:var(--panel,#1e2418);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px}
 .fr-h{font-weight:800;color:var(--gold,#c9a54a);letter-spacing:.06em;text-transform:uppercase;font-size:13px}
@@ -909,7 +902,7 @@ function home(){
   <div class="wrap">
     <section class="hero">
       <div>
-        <div class="eyebrow">Légion étrangère · cours complet du manuel <span style="opacity:.55">· version 58</span></div>
+        <div class="eyebrow">Légion étrangère · cours complet du manuel <span style="opacity:.55">· version 59</span></div>
         <h1>Apprenez.<br>Puis <em>prouvez-le.</em></h1>
         <div class="bubble fade-in"><div class="who"><span class="dot"></span>Instructeur</div><span id="greet">${esc(greet)}</span></div>
         <div class="row" style="margin-top:16px">
@@ -971,11 +964,6 @@ function home(){
   drc.innerHTML = `<span class="vid-badge">Jeu</span><span class="num"><svg viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M14 14l20 20M34 14L14 34"/><circle cx="11" cy="11" r="7"/><circle cx="37" cy="11" r="7"/><circle cx="11" cy="37" r="7"/><circle cx="37" cy="37" r="7"/><rect x="19" y="19" width="10" height="10" rx="2" fill="currentColor"/></svg></span><span class="ttl">Mission drone FPV</span><span class="fr">Renseignement au micro, puis drone kamikaze</span><span class="meta"><span>2 missions</span></span>`;
   drc.addEventListener('click', () => droneView(C.find(x => x.id === 'drones')));
   g.appendChild(drc);
-  const msc = document.createElement('button');
-  msc.className = 'card lgcard';
-  msc.innerHTML = `<span class="vid-badge">Jeu</span><span class="num">✛</span><span class="ttl">Mission de combat</span><span class="fr">Votre personnage et votre arme contre ${MS_TOTAL} ennemis</span><span class="meta"><span>${store._msBest ? 'Meilleur score : ' + store._msBest : 'Debout, à genoux, couché'}</span></span>`;
-  msc.addEventListener('click', missionView);
-  g.appendChild(msc);
   const f = document.createElement('button');
   f.className = 'card final';
   const fb = store._final;
@@ -2294,7 +2282,7 @@ async function deleteAccount(){
    Chaque appareil reçoit un code aléatoire (aucun nom, aucune e-mail). On envoie seulement :
    première et dernière ouverture, langue, plateforme, version, nombre d'ouvertures, de leçons, de quiz et de jeux. */
 const IS_NATIVE = !!(window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform());
-const APP_VER = "58";
+const APP_VER = "59";
 const STATS = (() => {
   const id = (() => { let v = store._sid; if (!v || !/^[a-z0-9]{20,40}$/.test(v)) { v = Array.from(crypto.getRandomValues(new Uint8Array(16)), b => (b % 36).toString(36)).join('') + Date.now().toString(36); store._sid = v; save(); } return v; })();
   const c = store._st || (store._st = { visits: 0, lessons: 0, quizzes: 0, games: 0, first: new Date().toISOString(), lastGame: null });
@@ -2417,297 +2405,6 @@ function adminView(){
     else msg.textContent = 'Refusé (' + r.status + '). Vérifiez que vous êtes connecté avec ' + FB.admin + '.';
   };
   draw(); top();
-}
-
-/* ---------- MISSION DE COMBAT (petit jeu de tir, un seul niveau) ----------
-   Le personnage choisi (écran d'accueil) tient l'arme choisie dans l'armurerie.
-   Trois positions : DEBOUT (atteint tout, très exposé), À GENOUX (protégé par les sacs, atteint fenêtres et sol),
-   COUCHÉ (presque invisible, atteint seulement les ennemis au sol). Touchez un ennemi pour tirer. */
-let MS = null;
-const MS_W = 600, MS_H = 640, MS_TOTAL = 18;
-const MS_REACH = { debout: ['low', 'mid', 'high'], genoux: ['low', 'mid'], couche: ['low'] };
-const MS_HIT = { debout: 0.85, genoux: 0.4, couche: 0.08 };
-const MS_SPOTS = [
-  { lv: 'high', x: 262, y: 74, w: 62, h: 66 }, { lv: 'high', x: 448, y: 66, w: 62, h: 66 }, { lv: 'high', x: 522, y: 66, w: 62, h: 66 },
-  { lv: 'mid', x: 262, y: 196, w: 48, h: 60, win: 1 }, { lv: 'mid', x: 336, y: 196, w: 48, h: 60, win: 1 },
-  { lv: 'mid', x: 456, y: 180, w: 48, h: 60, win: 1 }, { lv: 'mid', x: 530, y: 180, w: 48, h: 60, win: 1 }, { lv: 'mid', x: 456, y: 270, w: 48, h: 60, win: 1 },
-  { lv: 'low', x: 318, y: 396, w: 66, h: 74, crate: [306, 470, 92, 62] }, { lv: 'low', x: 486, y: 430, w: 70, h: 80, crate: [470, 510, 104, 66] },
-  { lv: 'low', x: 398, y: 352, w: 58, h: 64, wall: [382, 416, 96, 40] }
-];
-function msImg(src){ const i = new Image(); i.src = src; return i; }
-function msAudio(){ try { if (!MS.ac) MS.ac = new (window.AudioContext || window.webkitAudioContext)(); if (MS.ac.state === 'suspended') MS.ac.resume(); } catch(e){} return MS.ac; }
-function msBang(vol, cut){
-  const ac = msAudio(); if (!ac) return;
-  const n = ac.sampleRate * 0.25 | 0, b = ac.createBuffer(1, n, ac.sampleRate), d = b.getChannelData(0);
-  for (let i = 0; i < n; i++) { const t = i / ac.sampleRate; d[i] = (Math.random() * 2 - 1) * Math.exp(-t * 22); }
-  const s = ac.createBufferSource(); s.buffer = b; const f = ac.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = cut || 2600;
-  const g = ac.createGain(); g.gain.value = vol; s.connect(f); f.connect(g); g.connect(ac.destination); s.start();
-}
-function msBg(){
-  const c = document.createElement('canvas'); c.width = MS_W; c.height = MS_H; const x = c.getContext('2d');
-  let g = x.createLinearGradient(0, 0, 0, 380); g.addColorStop(0, '#6f86a8'); g.addColorStop(.6, '#d9b98a'); g.addColorStop(1, '#e8c48e'); x.fillStyle = g; x.fillRect(0, 0, MS_W, 400);
-  x.fillStyle = 'rgba(255,240,200,.55)'; x.beginPath(); x.arc(120, 90, 34, 0, 7); x.fill();
-  x.fillStyle = '#c99d63'; x.beginPath(); x.moveTo(0, 330); for (let i = 0; i <= 600; i += 20) x.lineTo(i, 320 - Math.sin(i / 70) * 18); x.lineTo(600, 400); x.lineTo(0, 400); x.fill();
-  const wall = (X, Y, W, H, col) => { x.fillStyle = col; x.fillRect(X, Y, W, H); x.fillStyle = 'rgba(0,0,0,.08)'; for (let i = 0; i < 40; i++) x.fillRect(X + Math.random() * W, Y + Math.random() * H, 8, 3); };
-  wall(230, 150, 190, 270, '#c8a274'); x.fillStyle = '#a9835a'; x.fillRect(222, 140, 206, 14);
-  wall(420, 142, 180, 278, '#b98f62'); x.fillStyle = '#9a7450'; x.fillRect(412, 132, 196, 14);
-  x.fillStyle = '#5b4632'; x.fillRect(390, 340, 34, 80);
-  x.fillStyle = '#d6b07a'; x.fillRect(0, 400, MS_W, 240);
-  x.fillStyle = 'rgba(120,90,50,.18)'; for (let i = 0; i < 120; i++) x.fillRect(Math.random() * 600, 400 + Math.random() * 240, 10 + Math.random() * 20, 2);
-  x.strokeStyle = '#5a4a2c'; x.lineWidth = 7; x.beginPath(); x.moveTo(190, 410); x.quadraticCurveTo(180, 300, 205, 220); x.stroke();
-  x.fillStyle = '#3f6a35'; for (let i = 0; i < 7; i++) { x.save(); x.translate(205, 222); x.rotate(i * 0.9 - 2.6); x.beginPath(); x.ellipse(32, 0, 34, 7, 0, 0, 7); x.fill(); x.restore(); }
-  return c;
-}
-function msCover(x, s){
-  if (s.win) { x.strokeStyle = '#5b4632'; x.lineWidth = 5; x.strokeRect(s.x - 2, s.y - 2, s.w + 4, s.h + 4); x.fillStyle = '#7a5c3e'; x.fillRect(s.x - 6, s.y + s.h, s.w + 12, 6); }
-  if (s.crate) { const [cx, cy, cw, ch] = s.crate; x.fillStyle = '#8a6438'; x.fillRect(cx, cy, cw, ch); x.strokeStyle = '#5b3f20'; x.lineWidth = 4; x.strokeRect(cx, cy, cw, ch); x.beginPath(); x.moveTo(cx, cy); x.lineTo(cx + cw, cy + ch); x.moveTo(cx + cw, cy); x.lineTo(cx, cy + ch); x.stroke(); }
-  if (s.wall) { const [wx, wy, ww, wh] = s.wall; x.fillStyle = '#a88760'; x.fillRect(wx, wy, ww, wh); x.fillStyle = 'rgba(0,0,0,.12)'; for (let i = 0; i < ww; i += 24) x.fillRect(wx + i, wy, 2, wh); }
-  if (s.lv === 'high') { x.fillStyle = s.x < 400 ? '#a9835a' : '#9a7450'; x.fillRect(s.x - 4, s.y + s.h, s.w + 8, 14); }
-}
-function msEnemy(x, e){
-  const s = e.s, k = s.w / 60, rise = Math.min(1, e.pop), dead = e.dead;
-  x.save(); x.beginPath(); x.rect(s.x - 30, s.y - 20, s.w + 60, s.h + 20); x.clip();
-  const bx = s.x + s.w / 2, by = s.y + s.h + (1 - rise) * s.h + (dead ? dead * 60 : 0);
-  x.translate(bx, by); x.scale(k, k); if (dead) { x.rotate(dead * 0.6); x.globalAlpha = Math.max(0, 1 - dead); }
-  x.fillStyle = '#2b2e2a'; x.beginPath(); x.moveTo(-26, 0); x.lineTo(-22, -40); x.quadraticCurveTo(0, -50, 22, -40); x.lineTo(26, 0); x.fill();
-  x.fillStyle = '#3d4436'; x.fillRect(-16, -38, 32, 26); x.fillStyle = '#23261f'; x.fillRect(-14, -30, 8, 10); x.fillRect(6, -30, 8, 10);
-  x.fillStyle = '#1d1f1c'; x.beginPath(); x.arc(0, -56, 13, 0, 7); x.fill();
-  x.fillStyle = '#c8a07a'; x.fillRect(-9, -60, 18, 6); x.fillStyle = '#111'; x.fillRect(-6, -59, 4, 3); x.fillRect(2, -59, 4, 3);
-  x.fillStyle = '#30352c'; x.beginPath(); x.arc(0, -62, 14, Math.PI, 0); x.fill();
-  x.fillStyle = '#151515'; x.fillRect(-46, -30, 40, 6); x.fillRect(-14, -28, 8, 12); x.fillRect(-52, -29, 8, 3);
-  if (e.st === 'aim' && !dead) { x.fillStyle = 'rgba(255,40,30,' + (0.5 + Math.sin(MS.t * 30) * 0.5) + ')'; x.beginPath(); x.arc(-52, -27, 5, 0, 7); x.fill(); }
-  if (e.flash > 0 && !dead) { x.fillStyle = '#ffd25a'; x.beginPath(); x.moveTo(-52, -27); x.lineTo(-74, -34); x.lineTo(-68, -27); x.lineTo(-76, -20); x.fill(); }
-  x.restore();
-}
-function msBox(e){ const s = e.s, k = s.w / 60, rise = Math.min(1, e.pop), bx = s.x + s.w / 2, by = s.y + s.h + (1 - rise) * s.h;
-  return { x0: bx - 30 * k, x1: bx + 30 * k, y0: Math.max(s.y - 20, by - 72 * k), y1: Math.min(s.y + s.h, by), hy: by - 50 * k }; }
-function missionView(){
-  STATS.hit('game'); stopTalk(); state.view = 'mission';
-  if (MS && MS.raf) cancelAnimationFrame(MS.raf);
-  const sk = curSkin(), wp = curWeapon();
-  MS = { ac: MS && MS.ac, bg: msBg(), gun: msImg(`img/weapons/w${String(wp.n).padStart(2, '0')}.webp`), wp, sk };
-  app.innerHTML = `<div class="wrap view ms-view"><div class="crumb"><button class="back" id="bk">← Retour</button><span class="mode">Jeu · un niveau</span><h2>Mission de combat</h2></div>
-    <div class="ms-box"><canvas id="msCv" width="${MS_W}" height="${MS_H}"></canvas><div class="ms-ov" id="msOv"></div></div>
-    <div class="ms-ctl"><button class="ms-st on" data-st="debout">DEBOUT</button><button class="ms-st" data-st="genoux">À GENOUX</button><button class="ms-st" data-st="couche">COUCHÉ</button><button class="ms-rl" id="msRl">⟳ RECHARGER</button></div>
-    <p class="muted" style="font-size:13px;margin:8px 2px 110px">Touchez un ennemi pour tirer. Debout, vous atteignez les toits mais vous êtes exposé. À genoux, les sacs de sable vous protègent. Couché, vous ne touchez que les ennemis au sol.</p></div>`;
-  document.getElementById('bk').onclick = () => { msStop(); home(); };
-  const cv = document.getElementById('msCv'); MS.cv = cv; MS.x = cv.getContext('2d');
-  document.querySelectorAll('.ms-st').forEach(b => b.onclick = () => msStance(b.dataset.st));
-  document.getElementById('msRl').onclick = msReload;
-  cv.addEventListener('pointerdown', ev => { const r = cv.getBoundingClientRect(); msFire((ev.clientX - r.left) * MS_W / r.width, (ev.clientY - r.top) * MS_H / r.height); });
-  msIntro(); top();
-}
-function msIntro(){
-  const ov = document.getElementById('msOv'); if (!ov) return;
-  ov.style.display = 'flex';
-  ov.innerHTML = `<div class="ms-card"><h3>Mission : l'avant-poste</h3><p>${esc(MS.sk ? MS.sk.name : 'Instructeur')} · ${esc(MS.wp.name)}</p><p>Neutralisez ${MS_TOTAL} ennemis : sur les toits, aux fenêtres et derrière les caisses.</p>${store._msBest ? `<p class="muted">Meilleur score : ${store._msBest}</p>` : ''}<button class="btn green" id="msGo">Commencer</button></div>`;
-  msReset(); msDraw();
-  document.getElementById('msGo').onclick = () => { ov.style.display = 'none'; msAudio(); MS.on = true; MS.last = performance.now(); MS.raf = requestAnimationFrame(msLoop); };
-}
-function msReset(){ Object.assign(MS, { st: 'debout', hp: 100, ammo: 30, rl: 0, en: [], spawned: 0, killed: 0, shots: 0, hits: 0, score: 0, t: 0, next: 0.8, fx: [], aim: { x: 420, y: 250 }, ga: 0.55, lastShot: -9, poseT: 1, prevPose: null, rig: null, kick: 0, flash: 0, hurt: 0, msg: '', msgT: 0, on: false });
-  document.querySelectorAll('.ms-st').forEach(b => b.classList.toggle('on', b.dataset.st === 'debout')); }
-function msStop(){ if (MS) { MS.on = false; if (MS.raf) cancelAnimationFrame(MS.raf); MS.raf = 0; } }
-function msStance(st){ if (!MS || MS.st === st) return; MS.prevPose = MS.rig ? { hip: MS.rig.hip, sh: MS.rig.sh, bf: MS.rig.bf, ff: MS.rig.ff, bk: MS.rig.bk } : null; MS.poseT = 0; MS.st = st; document.querySelectorAll('.ms-st').forEach(b => b.classList.toggle('on', b.dataset.st === st)); }
-function msReload(){ if (!MS || !MS.on || MS.rl > 0 || MS.ammo === 30) return; MS.rl = 1.5; msSay('Rechargement…'); }
-function msSay(t){ MS.msg = t; MS.msgT = 1.6; }
-function msGunPos(){ const R = MS.rig || msRig(); return { gx: R.sh.x, gy: R.sh.y }; }
-function msAimAt(tx, ty){ const R = MS.rig || msRig(); return Math.max(-1.15, Math.min(0.7, Math.atan2(ty - R.butt.y, tx - R.butt.x))); }
-function msFire(tx, ty){
-  if (!MS || !MS.on) return;
-  if (MS.rl > 0) { msSay('Rechargement…'); return; }
-  if (MS.ammo <= 0) { msReload(); return; }
-  MS.ammo--; MS.shots++; MS.aim = { x: tx, y: ty }; MS.ga = msAimAt(tx, ty); MS.lastShot = MS.t; MS.kick = 1; MS.flash = 0.07; msBang(0.8);
-  const R = msRig(); let hit = null;
-  for (const e of MS.en) { if (e.dead) continue; const b = msBox(e); if (tx > b.x0 - 8 && tx < b.x1 + 8 && ty > b.y0 - 8 && ty < b.y1 + 4 && e.pop > 0.4) { hit = e; break; } }
-  if (hit && !MS_REACH[MS.st].includes(hit.s.lv)) {
-    MS.fx.push({ k: 'puff', x: 230 + Math.random() * 40, y: MS_GY - 34, t: 0.4 });
-    msSay(MS.st === 'couche' ? 'Trop bas : relevez-vous pour tirer plus haut' : 'Les toits : il faut tirer DEBOUT'); hit = null;
-  }
-  MS.fx.push({ k: 'trace', x0: R.muz.x, y0: R.muz.y, x1: hit ? tx : tx, y1: ty, t: 0.08 });
-  if (hit) { hit.dead = 0.001; MS.hits++; MS.killed++; const head = ty < msBox(hit).hy; MS.score += head ? 150 : 100; if (head) msSay('Tir à la tête ! +150'); MS.fx.push({ k: 'hit', x: tx, y: ty, t: 0.3 }); }
-  else MS.fx.push({ k: 'puff', x: tx, y: ty, t: 0.35 });
-  if (MS.ammo === 0) msReload();
-}
-function msLoop(now){
-  if (!MS || !MS.on) return;
-  if (state.view !== 'mission' || !document.getElementById('msCv')) { msStop(); return; }
-  const dt = Math.min(0.05, (now - MS.last) / 1000); MS.last = now; MS.t += dt; msStep(dt); msDraw();
-  if (MS.on) MS.raf = requestAnimationFrame(msLoop);
-}
-function msStep(dt){
-  if (MS.rl > 0) { MS.rl -= dt; if (MS.rl <= 0) { MS.ammo = 30; MS.rl = 0; } }
-  MS.poseT = Math.min(1, (MS.poseT || 0) + dt * 5);
-  const ready = MS.st === 'couche' ? 0.12 : 0.6, tgt = MS.t - MS.lastShot < 1.4 ? msAimAt(MS.aim.x, MS.aim.y) : ready;
-  MS.ga += (tgt - MS.ga) * Math.min(1, dt * (MS.t - MS.lastShot < 1.4 ? 16 : 4));
-  MS.kick = Math.max(0, MS.kick - dt * 8); MS.flash -= dt; MS.hurt = Math.max(0, MS.hurt - dt * 2); MS.msgT -= dt;
-  MS.fx.forEach(f => f.t -= dt); MS.fx = MS.fx.filter(f => f.t > 0);
-  const alive = MS.en.filter(e => !e.dead).length, cap = MS.killed < 5 ? 2 : 3;
-  MS.next -= dt;
-  if (MS.next <= 0 && alive < cap && MS.spawned < MS_TOTAL) {
-    const used = MS.en.filter(e => !e.dead || e.dead < 1).map(e => e.s), free = MS_SPOTS.filter(s => !used.includes(s));
-    if (free.length) { MS.en.push({ s: free[Math.random() * free.length | 0], pop: 0, st: 'idle', w: 1.1 + Math.random() * 1.1, flash: 0, dead: 0 }); MS.spawned++; }
-    MS.next = 0.6 + Math.random() * 1.2;
-  }
-  for (const e of MS.en) {
-    if (e.dead) { e.dead += dt * 1.6; continue; }
-    e.pop = Math.min(1, e.pop + dt * 3); e.flash -= dt;
-    if (e.pop < 1) continue;
-    e.w -= dt;
-    if (e.w <= 0) {
-      if (e.st === 'idle') { e.st = 'aim'; e.w = 0.75; }
-      else { e.st = 'idle'; e.w = 1.3 + Math.random() * 1.2; e.flash = 0.08; msBang(0.35, 1400);
-        const g = msGunPos(); MS.fx.push({ k: 'etrace', x0: e.s.x, y0: e.s.y + e.s.h - 20, x1: g.gx - 10 + Math.random() * 30, y1: g.gy - 10 + Math.random() * 50, t: 0.08 });
-        if (Math.random() < MS_HIT[MS.st]) { MS.hp -= 9; MS.hurt = 1; } else if (MS.st !== 'debout') MS.fx.push({ k: 'puff', x: 220 + Math.random() * 70, y: MS_GY - 40 + Math.random() * 20, t: 0.35 }); }
-    }
-  }
-  MS.en = MS.en.filter(e => !e.dead || e.dead < 1.2);
-  if (MS.hp <= 0) { MS.hp = 0; msEnd(false); }
-  else if (MS.killed >= MS_TOTAL) msEnd(true);
-}
-function msDraw(){
-  const x = MS.x; if (!x) return;
-  x.drawImage(MS.bg, 0, 0);
-  for (const s of MS_SPOTS) if (s.win) { x.fillStyle = '#2a2018'; x.fillRect(s.x, s.y, s.w, s.h); }
-  for (const e of MS.en) if (!e.s.crate && !e.s.wall) msEnemy(x, e);
-  for (const s of MS_SPOTS) msCover(x, s);
-  for (const e of MS.en) if (e.s.crate || e.s.wall) msEnemy(x, e);
-  for (const s of MS_SPOTS) if (s.crate || s.wall) msCover(x, s);
-  for (const f of MS.fx) {
-    if (f.k === 'trace' || f.k === 'etrace') { x.strokeStyle = f.k === 'trace' ? 'rgba(255,230,140,.9)' : 'rgba(255,120,80,.8)'; x.lineWidth = 2; x.beginPath(); x.moveTo(f.x0, f.y0); x.lineTo(f.x1, f.y1); x.stroke(); }
-    if (f.k === 'puff') { x.fillStyle = `rgba(200,180,140,${f.t * 2})`; x.beginPath(); x.arc(f.x, f.y, 14 - f.t * 20, 0, 7); x.fill(); }
-    if (f.k === 'hit') { x.fillStyle = `rgba(200,30,30,${f.t * 3})`; x.beginPath(); x.arc(f.x, f.y, 10 + (0.3 - f.t) * 30, 0, 7); x.fill(); }
-  }
-  // sacs de sable entre le personnage et les ennemis
-  for (let r = 0; r < 3; r++) for (let i = 0; i < 4 - r; i++) { const sx = 196 + i * 40 + r * 20, sy = MS_GY + 8 - r * 22; x.fillStyle = r % 2 ? '#a08a5e' : '#b29a6b'; x.beginPath(); x.ellipse(sx + 20, sy, 23, 13, 0, 0, 7); x.fill(); x.strokeStyle = 'rgba(60,45,25,.55)'; x.lineWidth = 2; x.stroke(); }
-  msSoldier(x);
-  if (MS.hurt > 0) { x.fillStyle = `rgba(190,20,20,${MS.hurt * 0.35})`; x.fillRect(0, 0, MS_W, MS_H); }
-  // tableau de bord
-  x.fillStyle = 'rgba(15,18,12,.78)'; x.fillRect(0, 0, MS_W, 40);
-  x.font = 'bold 15px system-ui,sans-serif'; x.fillStyle = '#333'; x.fillRect(12, 14, 110, 13); x.fillStyle = MS.hp > 40 ? '#5fae4f' : '#d9452f'; x.fillRect(12, 14, 110 * MS.hp / 100, 13);
-  x.fillStyle = '#eef2e6'; x.fillText(`☠ ${MS.killed}/${MS_TOTAL}`, 136, 26); x.fillText(`${MS.score} pts`, 214, 26);
-  const am = MS.rl > 0 ? 'RECHARGEMENT…' : `${MS.wp.name} · ${MS.ammo}/30`; x.fillStyle = MS.ammo <= 5 && !MS.rl ? '#ff8a6a' : '#ffd25a'; x.fillText(am, MS_W - 12 - x.measureText(am).width, 26);
-  if (MS.msgT > 0 && MS.msg) { x.font = 'bold 18px system-ui,sans-serif'; const w = x.measureText(MS.msg).width; x.fillStyle = 'rgba(15,18,12,.8)'; x.fillRect(MS_W / 2 - w / 2 - 12, 52, w + 24, 32); x.fillStyle = '#ffd25a'; x.fillText(MS.msg, MS_W / 2 - w / 2, 74); }
-}
-function msEnd(win){
-  msStop(); msDraw();
-  const acc = MS.shots ? Math.round(MS.hits / MS.shots * 100) : 0, bonus = win ? MS.hp * 10 + acc * 5 : 0, total = MS.score + bonus;
-  const stars = win ? (MS.hp >= 60 && acc >= 50 ? 3 : MS.hp >= 30 ? 2 : 1) : 0;
-  if (win && total > (store._msBest || 0)) { store._msBest = total; save(); }
-  const ov = document.getElementById('msOv'); if (!ov) return; ov.style.display = 'flex';
-  ov.innerHTML = `<div class="ms-card"><h3>${win ? 'Mission accomplie !' : 'Vous êtes tombé…'}</h3>${win ? `<div class="ms-stars">${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}</div>` : ''}
-    <p>Ennemis neutralisés : ${MS.killed}/${MS_TOTAL}<br>Précision : ${acc} %<br>Santé restante : ${MS.hp}</p><p><b>Score : ${total}</b>${store._msBest ? ` · meilleur : ${store._msBest}` : ''}</p>
-    ${win ? '' : '<p class="muted">Conseil : restez à genoux derrière les sacs et ne vous levez que pour les toits.</p>'}
-    <div class="row" style="justify-content:center"><button class="btn green" id="msAgain">Rejouer</button><button class="btn ghost" id="msHome">Accueil</button></div></div>`;
-  document.getElementById('msAgain').onclick = () => { ov.style.display = 'none'; msReset(); msAudio(); MS.on = true; MS.last = performance.now(); MS.raf = requestAnimationFrame(msLoop); };
-  document.getElementById('msHome').onclick = home;
-}
-
-/* Personnage de la mission dessiné de profil (tourné vers les ennemis), avec la tenue du personnage choisi.
-   Trois positions (debout, à genoux, couché) ; les bras suivent l'arme, qui vise le point touché. */
-const MS_GY = 612, MS_U = 1.7;
-const MS_LOOK = {
-  0: { top: '#d6ccb0', leg: '#85857f', boot: '#151515', skin: '#e2b48f', hat: 'kepiN' },
-  1: { cam: 'des', boot: '#a88a5c', skin: '#5a3a26', hat: 'kepiN' },
-  2: { top: '#a9a57f', leg: '#a9a57f', boot: '#151515', skin: '#5a3a26', hat: 'kepiN', aig: '#b51f1f' },
-  3: { cam: 'des', boot: '#a88a5c', skin: '#d9a57f', hat: 'kepiB' },
-  4: { cam: 'des', boot: '#a88a5c', skin: '#e2b48f', hat: 'kepiN' },
-  5: { cam: 'lig', boot: '#a88a5c', skin: '#d9a57f', hat: 'kepiN' },
-  6: { top: '#1d2335', leg: '#1d2335', boot: '#111', skin: '#e2b48f', hat: 'kepiN', aig: '#d4a72c' },
-  7: { cam: 'mc', boot: '#a88a5c', skin: '#d9a57f', hat: 'helm', vest: 1, glove: '#3a3528' },
-  8: { cam: 'mc', boot: '#a88a5c', skin: '#d9a57f', hat: 'beret', vest: 1, glove: '#3a3528' },
-  9: { top: '#565a3b', leg: '#565a3b', boot: '#151515', skin: '#e2b48f', hat: 'kepiB', aig: '#b51f1f' },
-  10: { cam: 'des', boot: '#a88a5c', skin: '#e2b48f', hat: 'kepiB' }
-};
-const MS_CAMO = { des: ['#b59a6a', '#8f7448', '#d2bd8c', '#6f5a38'], lig: ['#c3b588', '#9c8c5e', '#ddd0a4', '#7c7048'], mc: ['#9a8a62', '#6b6a45', '#b9a678', '#4f4a32', '#7d6a48'] };
-function msPattern(x, key){
-  const c = document.createElement('canvas'); c.width = c.height = 90; const g = c.getContext('2d'), p = MS_CAMO[key];
-  let sd = key.length * 977; const rnd = () => (sd = (sd * 16807) % 2147483647) / 2147483647;
-  g.fillStyle = p[0]; g.fillRect(0, 0, 90, 90);
-  for (let i = 0; i < 46; i++) { g.fillStyle = p[1 + (i % (p.length - 1))]; g.beginPath(); g.ellipse(rnd() * 90, rnd() * 90, 4 + rnd() * 9, 2 + rnd() * 5, rnd() * 3, 0, 7); g.fill(); }
-  return x.createPattern(c, 'repeat');
-}
-function msIK(a, b, l1, l2, sg){
-  const dx = b.x - a.x, dy = b.y - a.y, d = Math.min(Math.hypot(dx, dy), l1 + l2 - 0.01), an = Math.atan2(dy, dx);
-  const th = Math.acos(Math.max(-1, Math.min(1, (l1 * l1 + d * d - l2 * l2) / (2 * l1 * d))));
-  return { x: a.x + l1 * Math.cos(an + sg * th), y: a.y + l1 * Math.sin(an + sg * th) };
-}
-function msPose(st){
-  const u = MS_U, G = MS_GY, P = (x, y) => ({ x, y });
-  if (st === 'debout') { const hip = P(96, G - 96 * u), tl = 0.12; return { hip, sh: P(hip.x + 56 * u * Math.sin(tl), hip.y - 56 * u * Math.cos(tl)), bf: P(96 - 26 * u, G - 3 * u), ff: P(96 + 22 * u, G - 3 * u) }; }
-  if (st === 'genoux') { const hip = P(90, G - 50 * u), tl = 0.1; return { hip, sh: P(hip.x + 56 * u * Math.sin(tl), hip.y - 56 * u * Math.cos(tl)), bk: P(90 - 22 * u, G - 6 * u), bf: P(90 - 58 * u, G - 3 * u), ff: P(90 + 34 * u, G - 3 * u) }; }
-  const hip = P(118, G - 15 * u), a = -0.17;
-  return { hip, sh: P(hip.x + 56 * u * Math.cos(a), hip.y + 56 * u * Math.sin(a)), bf: P(hip.x - 88 * u, G - 6 * u), ff: P(hip.x - 86 * u, G - 11 * u), prone: 1 };
-}
-function msLerpPose(a, b, t){ const o = {}; for (const k in b) { if (typeof b[k] !== 'object') { o[k] = b[k]; continue; } const p = a[k] || b[k]; o[k] = { x: p.x + (b[k].x - p.x) * t, y: p.y + (b[k].y - p.y) * t }; } return o; }
-function msCap(x, a, b, r1, r2){ const an = Math.atan2(b.y - a.y, b.x - a.x); x.beginPath(); x.arc(a.x, a.y, r1, an + Math.PI / 2, an - Math.PI / 2); x.arc(b.x, b.y, r2, an - Math.PI / 2, an + Math.PI / 2); x.closePath(); }
-function msLimb(x, a, b, r1, r2, fill, far){ msCap(x, a, b, r1, r2); x.fillStyle = fill; x.fill(); if (far) { x.fillStyle = 'rgba(0,0,0,.28)'; x.fill(); } x.strokeStyle = 'rgba(30,24,14,.75)'; x.lineWidth = 1.6; x.stroke(); }
-// Calcule la pose complète : hanches, épaule, arme, mains, coudes.
-function msRig(){
-  const u = MS_U, cur = msPose(MS.st), t = Math.min(1, MS.poseT || 1), p = MS.prevPose ? msLerpPose(MS.prevPose, cur, t) : cur;
-  p.prone = cur.prone;
-  const a = MS.ga, br = p.prone ? 0 : Math.sin(MS.t * 2.2) * 0.8;
-  const sh = { x: p.sh.x, y: p.sh.y + br };
-  const butt = { x: sh.x + 3 * u - MS.kick * 5 * Math.cos(a), y: sh.y + 4 * u - MS.kick * 5 * Math.sin(a) };
-  const WL = 112 * u, WH = WL / 2, ca = Math.cos(a), sa = Math.sin(a), on = (s, n) => ({ x: butt.x + ca * s * WL - sa * n * WH, y: butt.y + sa * s * WL + ca * n * WH });
-  const rh = on(0.33, 0.2), fh = on(0.54, 0.12), muz = on(0.98, -0.04);
-  const head = p.prone ? { x: sh.x + 15 * u, y: sh.y - 12 * u } : { x: sh.x + 6 * u + a * 2 * u, y: sh.y - 19 * u };
-  return Object.assign(p, { sh, butt, a, WL, WH, rh, fh, muz, head,
-    re: msIK(sh, rh, 30 * u, 28 * u, 1), fe: msIK({ x: sh.x + 2 * u, y: sh.y + 2 * u }, fh, 30 * u, 28 * u, 1),
-    bk: p.bk && !p.prone ? p.bk : msIK(p.hip, p.bf, 48 * u, 47 * u, p.prone ? 1 : -1), fk: msIK(p.hip, p.ff, 48 * u, 47 * u, p.prone ? 1 : -1) });
-}
-function msHat(x, h, L, u){
-  const r = 11 * u;
-  if (L.hat === 'helm') {
-    x.fillStyle = '#857552'; x.beginPath(); x.arc(h.x - 1 * u, h.y - 2 * u, r * 1.12, Math.PI * 1.02, Math.PI * 2.02); x.lineTo(h.x + 10 * u, h.y + 1 * u); x.lineTo(h.x - 12 * u, h.y + 2 * u); x.fill();
-    x.strokeStyle = 'rgba(30,24,14,.7)'; x.lineWidth = 1.6; x.stroke(); x.fillStyle = '#2b2b26'; x.fillRect(h.x + 4 * u, h.y - 12 * u, 6 * u, 4 * u); x.fillRect(h.x - 9 * u, h.y - 5 * u, 6 * u, 3 * u);
-  } else if (L.hat === 'beret') {
-    x.fillStyle = '#2f4a2a'; x.beginPath(); x.ellipse(h.x - 2 * u, h.y - 9 * u, 13 * u, 6 * u, -0.25, 0, 7); x.fill(); x.fillStyle = '#c9a43a'; x.beginPath(); x.arc(h.x + 6 * u, h.y - 10 * u, 2 * u, 0, 7); x.fill();
-  } else {
-    const white = L.hat === 'kepiB';
-    x.save(); x.translate(h.x, h.y - 7 * u); x.rotate(-0.08);
-    x.fillStyle = white ? '#f4f4ef' : '#1b1b1b'; x.fillRect(-10 * u, -14 * u, 19 * u, 14 * u);
-    x.fillStyle = white ? '#e3e3dc' : '#9b1c1c'; x.beginPath(); x.ellipse(-0.5 * u, -14 * u, 9.5 * u, 2.4 * u, 0, 0, 7); x.fill();
-    if (!white) { x.fillStyle = '#c9a43a'; x.fillRect(-10 * u, -3 * u, 19 * u, 1.4 * u); }
-    x.fillStyle = '#0d0d0d'; x.beginPath(); x.moveTo(5 * u, 0); x.lineTo(15 * u, 2.5 * u); x.lineTo(5 * u, 2 * u); x.fill();
-    x.strokeStyle = 'rgba(0,0,0,.5)'; x.lineWidth = 1.2; x.strokeRect(-10 * u, -14 * u, 19 * u, 14 * u); x.restore();
-  }
-}
-function msSoldier(x){
-  const u = MS_U, L = MS_LOOK[MS.sk ? MS.sk.n : 0] || MS_LOOK[0], R = msRig();
-  if (!MS.pat && L.cam) MS.pat = msPattern(x, L.cam);
-  const top = L.cam ? MS.pat : L.top, leg = L.cam ? MS.pat : L.leg, hand = L.glove || L.skin;
-  const boot = (k, f) => { x.fillStyle = L.boot; x.beginPath(); if (R.prone) x.ellipse(f.x - 2 * u, f.y, 6 * u, 9 * u, 0.2, 0, 7); else x.ellipse(f.x + 5 * u, f.y - 1 * u, 11 * u, 5.5 * u, 0, 0, 7); x.fill(); x.strokeStyle = 'rgba(0,0,0,.5)'; x.lineWidth = 1.2; x.stroke(); };
-  // ombre au sol
-  x.fillStyle = 'rgba(40,30,15,.25)'; x.beginPath(); x.ellipse(R.prone ? R.hip.x - 10 * u : R.hip.x, MS_GY + 2, R.prone ? 110 * u : 40 * u, 7, 0, 0, 7); x.fill();
-  // bras arrière (main sur la poignée), jambe arrière
-  msLimb(x, R.sh, R.re, 7.5 * u, 6.5 * u, top, 1); msLimb(x, R.re, R.rh, 6.5 * u, 5 * u, top, 1);
-  msLimb(x, R.hip, R.bk, 12 * u, 10 * u, leg, 1); msLimb(x, R.bk, R.bf, 10 * u, 7.5 * u, leg, 1); boot(R.bk, R.bf);
-  // torse
-  msLimb(x, R.hip, R.sh, 13 * u, 12.5 * u, top);
-  if (L.vest) { const mid = { x: (R.hip.x + R.sh.x) / 2, y: (R.hip.y + R.sh.y) / 2 }; msLimb(x, { x: (R.hip.x + mid.x) / 2, y: (R.hip.y + mid.y) / 2 }, { x: R.sh.x * 0.85 + mid.x * 0.15, y: R.sh.y * 0.85 + mid.y * 0.15 }, 14.5 * u, 14 * u, '#7b6c4a');
-    x.fillStyle = '#5f5236'; x.save(); x.translate(mid.x, mid.y); x.rotate(Math.atan2(R.sh.y - R.hip.y, R.sh.x - R.hip.x) + Math.PI / 2); for (let i = 0; i < 3; i++) x.fillRect(-11 * u + i * 8 * u, -2 * u, 6.5 * u, 10 * u); x.restore(); }
-  if (L.aig) { x.strokeStyle = L.aig; x.lineWidth = 2.2; x.beginPath(); x.moveTo(R.sh.x + 3 * u, R.sh.y + 2 * u); x.quadraticCurveTo(R.sh.x + 10 * u, R.sh.y + 18 * u, R.sh.x + 2 * u, R.sh.y + 22 * u); x.stroke(); }
-  x.strokeStyle = '#2a2418'; x.lineWidth = 3.4 * u * 0.7; const bh = { x: R.hip.x + (R.sh.x - R.hip.x) * 0.1, y: R.hip.y + (R.sh.y - R.hip.y) * 0.1 }; const ba = Math.atan2(R.sh.y - R.hip.y, R.sh.x - R.hip.x) + Math.PI / 2;
-  x.beginPath(); x.moveTo(bh.x - Math.cos(ba) * 13 * u, bh.y - Math.sin(ba) * 13 * u); x.lineTo(bh.x + Math.cos(ba) * 13 * u, bh.y + Math.sin(ba) * 13 * u); x.stroke();
-  // jambe avant
-  msLimb(x, R.hip, R.fk, 12 * u, 10 * u, leg); msLimb(x, R.fk, R.ff, 10 * u, 7.5 * u, leg); boot(R.fk, R.ff);
-  // tête : cou, visage de profil, oreille, œil, copricapo
-  const h = R.head; msLimb(x, { x: R.sh.x + 1 * u, y: R.sh.y - 2 * u }, { x: h.x - 2 * u, y: h.y + 6 * u }, 5 * u, 4.5 * u, L.skin);
-  x.fillStyle = L.skin; x.beginPath(); x.arc(h.x, h.y, 10.5 * u, 0, 7); x.fill(); x.strokeStyle = 'rgba(30,20,10,.6)'; x.lineWidth = 1.4; x.stroke();
-  x.beginPath(); x.moveTo(h.x + 9.5 * u, h.y - 2 * u); x.lineTo(h.x + 13.5 * u, h.y + 2.5 * u); x.lineTo(h.x + 9.5 * u, h.y + 3.5 * u); x.fill(); x.stroke();
-  x.fillStyle = 'rgba(0,0,0,.18)'; x.beginPath(); x.ellipse(h.x - 2.5 * u, h.y + 1 * u, 2.6 * u, 3.4 * u, 0, 0, 7); x.fill();
-  x.fillStyle = '#1a120c'; x.beginPath(); x.arc(h.x + 6 * u, h.y - 2 * u, 1.3 * u, 0, 7); x.fill();
-  x.strokeStyle = 'rgba(40,20,10,.7)'; x.lineWidth = 1.3; x.beginPath(); x.moveTo(h.x + 7 * u, h.y + 6 * u); x.lineTo(h.x + 10 * u, h.y + 6 * u); x.stroke();
-  msHat(x, h, L, u);
-  // arme choisie
-  if (MS.gun.complete && MS.gun.naturalWidth) { x.save(); x.translate(R.butt.x, R.butt.y); x.rotate(R.a); x.drawImage(MS.gun, -0.03 * R.WL, -0.5 * R.WH, R.WL, R.WH); x.restore(); }
-  if (MS.flash > 0) { x.save(); x.translate(R.muz.x, R.muz.y); x.rotate(R.a); x.fillStyle = '#ffe07a'; x.beginPath(); x.moveTo(0, -5); x.lineTo(30, -12); x.lineTo(22, -2); x.lineTo(36, 0); x.lineTo(22, 3); x.lineTo(28, 12); x.lineTo(0, 5); x.fill(); x.restore(); }
-  // main arrière sur la poignée, bras avant sur le garde-main
-  x.fillStyle = hand; x.beginPath(); x.arc(R.rh.x, R.rh.y, 4.6 * u, 0, 7); x.fill();
-  const fs = { x: R.sh.x + 2 * u, y: R.sh.y + 2 * u };
-  msLimb(x, fs, R.fe, 7.5 * u, 6.5 * u, top); msLimb(x, R.fe, R.fh, 6.5 * u, 5 * u, top);
-  x.fillStyle = hand; x.beginPath(); x.arc(R.fh.x, R.fh.y, 4.8 * u, 0, 7); x.fill(); x.strokeStyle = 'rgba(0,0,0,.4)'; x.lineWidth = 1; x.stroke();
-  MS.rig = R;
 }
 
 /* ---------- PERSONNAGES (instructeurs à acheter) ---------- */
@@ -2836,7 +2533,7 @@ function skinsView(first, tab){
   app.innerHTML = `<div class="wrap view">
     <div class="crumb">${first ? '' : '<button class="back" id="bk">← Retour</button>'}<span class="mode">Personnages</span><h2>Choisissez votre instructeur</h2></div>
     <div class="bubble fade-in"><div class="who"><span class="dot"></span>Instructeur</div>${store._name ? `${esc(store._name)}, choisissez qui vous accompagne. L'instructeur est gratuit. Les autres personnages s'achètent une fois et restent à vous : c'est lui qui vous parlera partout dans l'application.` : `Choisissez qui vous accompagne. L'instructeur est gratuit. Les autres personnages s'achètent une fois et restent à vous : c'est lui qui vous parlera partout dans l'application.`}</div>
-    <div class="row" style="margin-top:12px">${first ? '<button class="btn" id="skGo">Commencer avec ce choix</button>' : '<button class="btn green" id="skMs">🎯 Essayer en mission</button>'}${BILL ? '<button class="btn ghost" id="skRestore">Restaurer mes achats</button>' : ''}</div>
+    <div class="row" style="margin-top:12px">${first ? '<button class="btn" id="skGo">Commencer avec ce choix</button>' : ''}${BILL ? '<button class="btn ghost" id="skRestore">Restaurer mes achats</button>' : ''}</div>
     <div class="sk-tabs"><button class="btn ${tab === 'skins' ? 'on' : 'ghost'}" id="tabSk">🎖️ Personnages</button><button class="btn ${tab === 'arms' ? 'on' : 'ghost'}" id="tabWp">🔫 Armurerie</button></div>
     ${tab === 'skins' ? `<div class="sk-grid">${card(null)}${SKINS.map(card).join('')}</div>` : armoryHTML()}</div>`;
   document.getElementById('tabSk').onclick = () => skinsView(first, 'skins'); document.getElementById('tabWp').onclick = () => skinsView(first, 'arms');
@@ -2848,7 +2545,6 @@ function skinsView(first, tab){
   });
   const bk = document.getElementById('bk'); if (bk) bk.onclick = home;
   const go = document.getElementById('skGo'); if (go) go.onclick = home;
-  const msb = document.getElementById('skMs'); if (msb) msb.onclick = missionView;
   const rs = document.getElementById('skRestore'); if (rs) rs.onclick = async () => { try { await BILL.restorePurchases(); } catch(e){} await billRefresh(); toast('Achats restaurés.'); skinsView(first, tab); };
   app.querySelectorAll('.sk-card').forEach(b => b.onclick = () => {
     const id = b.dataset.id, s = SKINS.find(x => x.id === id) || null;
